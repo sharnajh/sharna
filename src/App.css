@@ -13,12 +13,12 @@ body {
   position: fixed;
   overflow: hidden;
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
 .star {
   border: 1px blue;
-  background-color:white;
+  background-color: white;
   filter: drop-shadow(0 0 6px white);
 }
 
@@ -29,7 +29,8 @@ body {
   height: 100vw;
   position: fixed;
   overflow: hidden;
-  transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%)) rotate(120deg);
+  transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%))
+    rotate(120deg);
 }
 
 .wish {
@@ -44,4 +45,13 @@ body {
   background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
   filter: drop-shadow(0 0 6px white);
   overflow: hidden;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow:hidden;
 }
