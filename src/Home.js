@@ -16,7 +16,7 @@ class Home extends Component {
             "M360,115.7186c18.27,103.1774,97.942,263.6039-38.3723,269.5522-157.2085,6.86-245.64,52.9751-269.5523-38.3723C10.8085,181.6144,7.7264,213.5082,92.4475,77.3463,173.0863-52.2546,345.0876,20.2105,362,115.7186Z"
         }
       ],
-      duration: 2000,
+      duration: 2500,
       easing: "linear",
       loop: true
     });
@@ -50,6 +50,7 @@ class Home extends Component {
         {
           targets: ["#pink"],
           fill: "#FF1A82",
+          stroke: "#FF1A82",
           easing: "linear",
           duration: 1000
         },
@@ -59,6 +60,7 @@ class Home extends Component {
         {
           targets: ["#blue"],
           fill: "#00B7FF",
+          stroke: "#FF1A82",
           easing: "linear",
           duration: 1000
         },

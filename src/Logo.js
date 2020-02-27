@@ -18,8 +18,8 @@ const Logo = () => {
           y2="208.9732"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#160071" />
-          <stop offset="1" stop-color="#3fdcff" stop-opacity="0.4" />
+          <stop offset="0" stopColor="#160071" />
+          <stop offset="1" stopColor="#3fdcff" stopOpacity="0.4" />
         </linearGradient>
       </defs>
       <g id="White_Stroke_Blob" data-name="White Stroke Blob">
@@ -30,7 +30,7 @@ const Logo = () => {
           fill="none"
           stroke="#fff"
           strokeMiterlimit="10"
-          strokeWidth="4px"
+          strokeWidth="2px"
         />
       </g>
       <g id="Blue_Gradient_Blob" data-name="Blue Gradient Blob">
