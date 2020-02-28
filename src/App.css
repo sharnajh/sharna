@@ -5,6 +5,11 @@ body {
   font-family: Futura;
   color: white;
   font-weight: 50;
+  margin:0;
+}
+
+a:focus {
+  outline: none;
 }
 
 #skybanner {
@@ -23,9 +28,7 @@ body {
 }
 
 .star {
-  border: 1px blue;
   background-color: white;
-  filter: drop-shadow(0 0 6px white);
   z-index: -6000;
 }
 
@@ -56,8 +59,8 @@ body {
 }
 
 .section {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,11 +88,20 @@ body {
   z-index: 1000;
 }
 
+
 #bio {
   display: flex;
   width: 880px;
   justify-content: space-between;
   align-items: center;
+  
+}
+
+#about {
+  background-color: white;
+  position: absolute;
+  z-index: -20;
+  color: black;
 }
 
 #about h1,
@@ -104,16 +116,35 @@ body {
   font-size: 16px;
   padding: 30px;
   line-height: 28px;
-  width: 500px;
+  width: 550px;
 }
 
 .desc a:link,
 .desc a:visited {
   text-decoration: none;
-  color: #ff1a82;
+  color: black;
   cursor: pointer;
+  position: relative;
+  z-index:200;
 }
 
+.desc a:link:after {
+  content: "";
+  display:inline-block;
+  background-color: #00B7FF;
+  position: absolute;
+  width: 100%;
+  height:8px;
+  bottom:0;
+  left:0;
+  z-index: -1;
+  transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+}
+
+.desc a:hover:link:after, .desc a:hover:visited:after {
+  height: 100%;
+  transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+}
 
 
 #pic {
@@ -121,27 +152,17 @@ body {
   background-size: cover;
   width: 250px;
   height: 250px;
+  border-radius:4px;
+  margin-right:0;
 }
 
-#pic:hover:before, #pic:hover:after  {
+#pic:hover:before  {
   opacity:0;
   cursor: pointer;
   transition: 0.5s;
 }
 
 #pic::before {
-  background-color: #00B7FF;
-  content: '';
-  display: inline-block;
-  width: 250px;
-  height: 250px;
-  mix-blend-mode: darken;
-  position:absolute;
-  opacity:0.4;
-  transition: 0.25s;
-}
-
-#pic::after {
   background-color: #FF1A82;
   content: '';
   display: inline-block;
@@ -151,10 +172,11 @@ body {
   position:absolute;
   opacity: 0.4;
   transition: 0.5s;
+  border-radius:4px;
 }
 
-
-
-#blob {
-  margin: 0;
+#email {
+  display:inline-block;
+  margin:0;
 }
+

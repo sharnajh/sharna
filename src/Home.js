@@ -75,6 +75,7 @@ class Home extends Component {
           Hi, I'm <span style={{ color: "#FF1A77" }}>Sharna</span>.
         </h1>
         <h1 style={{ fontSize: "23px" }}>I'm a Web Developer.</h1>
+       
       </div>
     );
   }

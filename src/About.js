@@ -13,7 +13,10 @@ class About extends Component {
             Hi there! My name is Sharna Hossain. I’m a web developer based in
             NYC. <br />I thrive at the intersection of science and art, and
             build things for the web that are both beautifully designed and
-            efficiently coded. <br />
+            efficiently coded. I'm an organized, ambitious, and passionate coder
+            currently seeking <a href="">new opportunities</a> as a web or
+            frontend developer.
+            <br />
             <br />
             In 2018, I graduated from the{" "}
             <a href="https://nycda.com/">New York Code + Design Academy</a> with
@@ -24,15 +27,13 @@ class About extends Component {
             </a>
             .{" "}
           </p>
-        <a href="https://github.com/sharnajh">
-          <div
+
+          {/* <div
             id="pic"
             src={Pic}
             alt="A girl smiling with black hair and brown eyes."
-          />
-          </a>
+          /> */}
         </div>
-        <h2>Technologies I love</h2>
       </div>
     );
   }
