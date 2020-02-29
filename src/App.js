@@ -9,6 +9,7 @@ const App = () => {
     <div>
       <StarrySky />
       <Home />
+      
       {/* <About /> */}
     </div>
   );

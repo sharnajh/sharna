@@ -7,7 +7,7 @@ class About extends Component {
   render() {
     return (
       <div className="section" id="about">
-        <h1>About Me</h1>
+        <h1>About Her</h1>
         <div id="bio">
           <p className="desc">
             Hi there! My name is Sharna Hossain. I’m a web developer based in
