@@ -4,7 +4,7 @@ body {
   background: linear-gradient(to right, #830095 0%, #160071 100%);
   font-family: Futura;
   color: white;
-  margin:0;
+  margin: 0;
 }
 
 a:focus {
@@ -63,7 +63,6 @@ a:focus {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  z-index: 1000;
   margin: 0;
   flex-direction: column;
 }
@@ -87,7 +86,6 @@ a:focus {
   z-index: 1000;
 }
 
-
 #bio {
   display: flex;
   width: 80vw;
@@ -98,17 +96,19 @@ a:focus {
 }
 
 #about {
-  position: absolute;
   z-index: -20;
   color: white;
 }
 
 .desc p {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 #about h1,
-#about h2 {
+#about h2,
+#portfolio h1,
+#contact h1 {
   font-weight: 50;
   text-align: left;
   margin-bottom: 25px;
@@ -130,44 +130,57 @@ a:focus {
   color: white;
   cursor: pointer;
   position: relative;
-  z-index:200;
-  padding-bottom:3px;
-  padding-top:3px;
+  z-index: 200;
+  padding-bottom: 3px;
+  padding-top: 3px;
   white-space: nowrap;
 }
 
-.desc a:link:after {
+.desc a:link:after,
+.desc a:visited:after,
+.desc a:active:after {
   content: "";
-  display:inline-block;
-  background-color: #FF1A82;
+  display: inline-block;
+  background-color: #ff1a82;
   position: absolute;
   width: 100%;
-  height:50%;
-  bottom:0;
-  left:0;
+  height: 50%;
+  bottom: 0;
+  left: 0;
   z-index: -1;
   transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  cursor: pointer;
 }
 
-.desc a:hover:link:after, .desc a:hover:visited:after, .desc a:hover:active:after {
+.desc a:hover:link:after,
+.desc a:hover:visited:after,
+.desc a:hover:active:after {
   height: 100%;
   transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  cursor: pointer;
 }
-
-
 
 #astronautwrapper {
   width: 50%;
   height: 500px;
+  transform: rotate(-20deg);
 }
 
 ::selection {
   color: white;
-  background: #00B7FF; /* WebKit/Blink Browsers */
+  background: #00b7ff; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
   color: white;
-  background: #00B7FF; /* Gecko Browsers */
+  background: #00b7ff; /* Gecko Browsers */
+}
+
+#portfolio {
+  height: 100vh;
+}
+
+#contact {
+  height: 100vh;
 }
 
 @media only screen and (max-width: 600px) {
@@ -185,13 +198,17 @@ a:focus {
     width: 100%;
   }
 
-  .desc a:link, .desc a:visited, .desc a:active  {
-    color: #00B7FF;
+  .desc a:link,
+  .desc a:visited,
+  .desc a:active {
+    color: #00b7ff;
     font-weight: bold;
     padding: 0;
   }
 
-  .desc a:link:after, .desc a:visited:after, .desc a:active:after  {
+  .desc a:link:after,
+  .desc a:visited:after,
+  .desc a:active:after {
     width: 0;
   }
 }

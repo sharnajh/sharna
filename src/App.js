@@ -1,8 +1,10 @@
 import React from "react";
-import "./App.css";
-import StarrySky from "./StarrySky";
+import "./assets/CSS/App.css";
+import StarrySky from "./assets/SVGs/StarrySky";
 import Home from "./Home";
 import About from "./About";
+import Portfolio from "./Portfolio";
+import Contact from "./Contact";
 
 const App = () => {
   return (
@@ -10,6 +12,8 @@ const App = () => {
       <StarrySky />
       <Home />
       <About />
+      {/* <Portfolio />
+      <Contact /> */}
     </div>
   );
 };

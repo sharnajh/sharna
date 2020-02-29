@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as THREE from "three";
 import * as OBJLoader from "three-obj-loader";
-import ASTRO from "./models/astro.obj";
+import ASTRO from "./assets/models/astro.obj";
 
 OBJLoader(THREE);
 
@@ -17,13 +17,19 @@ class Astronaut extends Component {
       0.2,
       1000
     );
-    var ambientLight = new THREE.AmbientLight( "#FFf" );
+    var ambientLight = new THREE.AmbientLight( "#FFFFFF" );
     scene.add(ambientLight)
 
 
-    let light = new THREE.PointLight("#00B7FF", 2, 10000);
-    light.position.set(20, 90, 20);
-    scene.add(light);
+    var lights = [];
+    lights[0] = new THREE.DirectionalLight( "#00b7ff", 1 );
+    lights[0].position.set( 1, 0, 0 );
+
+    lights[2] = new THREE.DirectionalLight( "#00b7ff", 1 );
+    lights[2].position.set( -0.75, -1, 0.5 );
+    scene.add( lights[0] );
+
+    scene.add( lights[2] );
 
     // Render
     let renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -31,10 +37,12 @@ class Astronaut extends Component {
     renderer.setSize(wrapper.clientHeight, wrapper.clientWidth);
     this.mount.appendChild(renderer.domElement);
 
-    var manager = new THREE.LoadingManager();
+    // Models
+    let manager = new THREE.LoadingManager();
     manager.onProgress = function(item, loaded, total) {
       console.log(item, loaded, total);
     };
+
 
     this.THREE = THREE;
     const loader = new this.THREE.OBJLoader();
@@ -48,7 +56,7 @@ class Astronaut extends Component {
       model => {
         // Add the loaded object to the scene
         console.log("SUCCESS");
-        let material = new THREE.MeshPhongMaterial({ color: "#FF1A82" });
+        let material = new THREE.MeshPhongMaterial({ color: "#FF1A82", side: THREE.DoubleSide });
         model.traverse(function(child) {
           if (child instanceof THREE.Mesh) {
             child.material = material;
@@ -58,7 +66,7 @@ class Astronaut extends Component {
         model.castShadow = true;
         model.position.set(0, -90, 0);
         model.rotation.x = 300;
-        model.rotation.y = 50;
+       
         scene.add(model);
         let animate = function() {
           requestAnimationFrame(animate);

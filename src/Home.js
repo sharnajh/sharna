@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logo from "./Logo.js";
+import Logo from "./assets/SVGs/Logo.js";
 
 class Home extends Component {
   render() {
@@ -9,8 +9,7 @@ class Home extends Component {
         <h1>
           Hi, I'm <span style={{ color: "#FF1A77" }}>Sharna</span>.
         </h1>
-        <h1 style={{ fontSize: "23px" }}>I'm a Web Developer.</h1>
-       
+        <h1 style={{ fontSize: "23px" }}>I'm a Web Developer.</h1>   
       </div>
     );
   }
