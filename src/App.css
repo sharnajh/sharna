@@ -133,6 +133,7 @@ a:focus {
   z-index:200;
   padding-bottom:3px;
   padding-top:3px;
+  white-space: nowrap;
 }
 
 .desc a:link:after {
