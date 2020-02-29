@@ -9,8 +9,7 @@ const App = () => {
     <div>
       <StarrySky />
       <Home />
-      
-      {/* <About /> */}
+      <About />
     </div>
   );
 };
