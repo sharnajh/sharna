@@ -183,4 +183,14 @@ a:focus {
   #bio #astronautwrapper {
     width: 100%;
   }
+
+  .desc a:link, .desc a:visited, .desc a:active  {
+    color: #00B7FF;
+    font-weight: bold;
+    padding: 0;
+  }
+
+  .desc a:link:after, .desc a:visited:after, .desc a:active:after  {
+    width: 0;
+  }
 }

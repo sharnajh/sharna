@@ -15,7 +15,7 @@ class About extends Component {
               efficiently coded. <br />
               I'm an organized, ambitious, and passionate coder currently
               seeking {" "}
-              <a href="/contact">
+              <a href="/">
                 <span>new opportunities</span>
               </a>{" "}
               as a web or frontend developer.
