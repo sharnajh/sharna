@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Description from "./Description";
-import Astronaut from "./Astronaut";
+import Astronaut from "./assets/models/Astronaut";
 
 class About extends Component {
   render() {

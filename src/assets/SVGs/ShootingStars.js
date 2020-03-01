@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import anime from "animejs/lib/anime.es.js";
 import { connect } from "react-redux";
 
+// Technically this isn't an SVG.
+
 class ShootingStars extends Component {
   state = {
     num: 60,

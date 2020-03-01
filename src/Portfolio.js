@@ -4,7 +4,9 @@ class Portfolio extends Component {
   render() {
     return (
       <div className="section" id="portfolio">
-        <h1>Portfolio</h1>
+        <div id="projects">
+          <h1>Portfolio</h1>
+        </div>
       </div>
     );
   }

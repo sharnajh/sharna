@@ -29,6 +29,7 @@ class StarrySky extends Component {
         fill="white"
         key={y}
         className="star"
+        opacity="0.7"
       />
     ));
   };
@@ -42,7 +43,7 @@ class StarrySky extends Component {
         },
         {
           duration: 700,
-          value: "1"
+          value: "0.7"
         }
       ],
       easing: "linear",

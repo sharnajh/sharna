@@ -91,7 +91,7 @@ a:focus {
   z-index: 1000;
 }
 
-#bio {
+#bio, #projects {
   display: flex;
   width: 80vw;
   justify-content: space-between;
@@ -112,7 +112,7 @@ a:focus {
 
 #about h1,
 #about h2,
-#portfolio h1,
+#projects h1,
 #contact h1 {
   font-weight: 50;
   text-align: left;
@@ -126,6 +126,7 @@ a:focus {
   line-height: 28px;
   width: 50%;
   margin: 0;
+  font-weight: 300;
 }
 
 .desc a:link,
@@ -169,6 +170,18 @@ a:focus {
   width: 50%;
   height: 500px;
   transform: rotate(-20deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#planet {
+  z-index: -1;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-color:#00b7ff;
 }
 
 ::selection {
@@ -180,8 +193,12 @@ a:focus {
   background: #00b7ff; /* Gecko Browsers */
 }
 
-#portfolio {
-  height: 100vh;
+#projects {
+  align-items: flex-start;
+}
+
+#projects h1 {
+  padding: 30px;
 }
 
 #contact {
@@ -215,5 +232,8 @@ a:focus {
   .desc a:visited:after,
   .desc a:active:after {
     width: 0;
+  }
+  #projects h1 {
+    padding: 0px;
   }
 }

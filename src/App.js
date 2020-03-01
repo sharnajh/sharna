@@ -12,8 +12,8 @@ const App = () => {
       <StarrySky />
       <Home />
       <About />
-      {/* <Portfolio />
-      <Contact /> */}
+      {/* <Portfolio /> */}
+      {/* <Contact /> */}
     </div>
   );
 };

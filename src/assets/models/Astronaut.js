@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import ASTRO from "./assets/models/astro.gltf";
+import ASTRO from "./astro.gltf";
 import { connect } from "react-redux";
-import { setLoaded } from "./actions/loaded";
+import { setLoaded } from "../../actions/loaded";
 
 class Astronaut extends Component {
   componentDidMount() {
@@ -52,7 +52,7 @@ class Astronaut extends Component {
       // onLoad callback
       // Here the loaded data is assumed to be an object
       gltf => {
-        dispatch(setLoaded())
+        dispatch(setLoaded());
         // Add the loaded object to the scene
         let model = gltf.scene;
         model.castShadow = true;
@@ -91,7 +91,11 @@ class Astronaut extends Component {
     // // Animation
   }
   render() {
-    return <div id="astronautwrapper" ref={ref => (this.mount = ref)} />;
+    return (
+      <div id="astronautwrapper" ref={ref => (this.mount = ref)}>
+        <div id="planet"></div>
+      </div>
+    );
   }
 }
 
