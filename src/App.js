@@ -12,7 +12,7 @@ const App = () => {
       <StarrySky />
       <Home />
       <About />
-      {/* <Portfolio /> */}
+      <Portfolio />
       {/* <Contact /> */}
     </div>
   );

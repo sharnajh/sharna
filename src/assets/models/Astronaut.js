@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import ASTRO from "./astro.gltf";
 import { connect } from "react-redux";
 import { setLoaded } from "../../actions/loaded";
@@ -11,13 +13,16 @@ class Astronaut extends Component {
     // Scene
     const wrapper = document.getElementById("astronautwrapper");
     let scene = new THREE.Scene();
-
     let camera = new THREE.PerspectiveCamera(
       75,
       wrapper.clientHeight / wrapper.clientWidth,
       0.2,
       1000
     );
+    scene.overrideMaterial = new THREE.MeshPhongMaterial({ color: "#FF1A82" });
+    camera.position.z = 160;
+
+    // Lights
     var ambientLight = new THREE.AmbientLight("#FFFFFF");
     scene.add(ambientLight);
 
@@ -37,13 +42,19 @@ class Astronaut extends Component {
     renderer.setSize(wrapper.clientHeight, wrapper.clientWidth);
     this.mount.appendChild(renderer.domElement);
 
+    // Orbit Control
+    let controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableZoom = false;
+
     // Models
     let manager = new THREE.LoadingManager();
     // manager.onProgress = function(item, loaded, total) {
     //   console.log(item, loaded, total);
     // };
-
     const loader = new GLTFLoader(manager);
+    let dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("three/examples/js/libs/draco");
+    loader.setDRACOLoader(dracoLoader);
 
     loader.load(
       // resource URL
@@ -52,6 +63,7 @@ class Astronaut extends Component {
       // onLoad callback
       // Here the loaded data is assumed to be an object
       gltf => {
+        // Update state
         dispatch(setLoaded());
         // Add the loaded object to the scene
         let model = gltf.scene;
@@ -63,6 +75,7 @@ class Astronaut extends Component {
         let animate = function() {
           requestAnimationFrame(animate);
           model.rotation.z += 0.02;
+          controls.update();
           renderer.render(scene, camera);
         };
         animate();
@@ -78,17 +91,6 @@ class Astronaut extends Component {
         console.error("An error happened: ", err);
       }
     );
-    scene.overrideMaterial = new THREE.MeshPhongMaterial({ color: "#FF1A82" });
-    camera.position.z = 145;
-
-    // Shape
-    // let geometry = new THREE.BoxGeometry(1, 1, 1);
-    // let material = new THREE.MeshBasicMaterial({ color: "#00B7FF" });
-    // let cube = new THREE.Mesh(geometry, material);
-    // scene.add(cube);
-    // camera.position.z = 2;
-
-    // // Animation
   }
   render() {
     return (

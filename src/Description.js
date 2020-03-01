@@ -38,10 +38,9 @@ class Description extends Component {
         </p>
         <h2>Technologies I love</h2>
         <ul>
-          <li>HTML/CSS</li>
+          <li>HTML/(S)CSS</li>
           <li>JavaScript (ES6+)</li>
-          <li>React.js</li>
-          <li>Redux.js</li>
+          <li>React</li>
           <li>Node.js</li>
           <li>Ruby</li>
           <li>WebGL</li>
@@ -50,8 +49,6 @@ class Description extends Component {
           <li>SVGs</li>
           <li>Blender</li>
           <li>Adobe Illustrator</li>
-          <li>Git</li>
-          <li>SASS</li>
         </ul>
       </div>
     );
