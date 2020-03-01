@@ -10,6 +10,7 @@ const App = () => {
   return (
     <div>
       <StarrySky />
+      <div id="email">sharnajh@gmail.com</div>
       <Home />
       <About />
       {/* <Portfolio /> */}
