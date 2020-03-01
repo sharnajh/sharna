@@ -55,7 +55,11 @@ class ShootingStars extends Component {
   };
   render() {
     const { loaded } = this.props;
-    if (loaded) {
+    if (this.state.vw > 600) {
+      if (loaded) {
+        this.shootingStars();
+      }
+    } else {
       this.shootingStars();
     }
     return <div id="shootingstars">{this.paintshooters()}</div>;

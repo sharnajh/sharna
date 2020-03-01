@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 class Home extends Component {
   render() {
     const { loaded } = this.props;
-    console.log(loaded);
     return (
       <div className="section" id="main">
         <div id="logowrapper">
