@@ -57,6 +57,16 @@ a:focus {
   overflow: hidden;
 }
 
+#logowrapper {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
 .section {
   width: 100vw;
   display: flex;
@@ -70,11 +80,6 @@ a:focus {
 #main {
   z-index: 1000;
   height: 100vh;
-}
-
-#logo {
-  padding: 20px;
-  z-index: 1000;
 }
 
 #main h1 {

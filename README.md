@@ -11,6 +11,7 @@
 ## Assets
 * GoogleFonts
 * Free3D.com
+* Loading.io
 
 ## Software
 * Adobe Illustrator

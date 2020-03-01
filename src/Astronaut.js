@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import * as THREE from "three";
-import * as OBJLoader from "three-obj-loader";
-import ASTRO from "./assets/models/astro.obj";
-
-OBJLoader(THREE);
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import ASTRO from "./assets/models/astro.gltf";
+import { connect } from "react-redux";
+import { setLoaded } from "./actions/loaded";
 
 class Astronaut extends Component {
   componentDidMount() {
+    const { dispatch } = this.props;
     // Scene
     const wrapper = document.getElementById("astronautwrapper");
     let scene = new THREE.Scene();
@@ -17,19 +18,18 @@ class Astronaut extends Component {
       0.2,
       1000
     );
-    var ambientLight = new THREE.AmbientLight( "#FFFFFF" );
-    scene.add(ambientLight)
-
+    var ambientLight = new THREE.AmbientLight("#FFFFFF");
+    scene.add(ambientLight);
 
     var lights = [];
-    lights[0] = new THREE.DirectionalLight( "#00b7ff", 1 );
-    lights[0].position.set( 1, 0, 0 );
+    lights[0] = new THREE.DirectionalLight("#00b7ff", 1);
+    lights[0].position.set(1, 0, 0);
 
-    lights[2] = new THREE.DirectionalLight( "#00b7ff", 1 );
-    lights[2].position.set( -0.75, -1, 0.5 );
-    scene.add( lights[0] );
+    lights[2] = new THREE.DirectionalLight("#00b7ff", 1);
+    lights[2].position.set(-0.75, -1, 0.5);
+    scene.add(lights[0]);
 
-    scene.add( lights[2] );
+    scene.add(lights[2]);
 
     // Render
     let renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -39,13 +39,11 @@ class Astronaut extends Component {
 
     // Models
     let manager = new THREE.LoadingManager();
-    manager.onProgress = function(item, loaded, total) {
-      console.log(item, loaded, total);
-    };
+    // manager.onProgress = function(item, loaded, total) {
+    //   console.log(item, loaded, total);
+    // };
 
-
-    this.THREE = THREE;
-    const loader = new this.THREE.OBJLoader();
+    const loader = new GLTFLoader(manager);
 
     loader.load(
       // resource URL
@@ -53,25 +51,18 @@ class Astronaut extends Component {
 
       // onLoad callback
       // Here the loaded data is assumed to be an object
-      model => {
+      gltf => {
+        dispatch(setLoaded())
         // Add the loaded object to the scene
-        console.log("SUCCESS");
-        let material = new THREE.MeshPhongMaterial({ color: "#FF1A82", side: THREE.DoubleSide });
-        model.traverse(function(child) {
-          if (child instanceof THREE.Mesh) {
-            child.material = material;
-            child.castShadow = true;
-          }
-        });
+        let model = gltf.scene;
         model.castShadow = true;
         model.position.set(0, -90, 0);
         model.rotation.x = 300;
-       
+
         scene.add(model);
         let animate = function() {
           requestAnimationFrame(animate);
           model.rotation.z += 0.02;
-          // model.rotation.x += 0.01
           renderer.render(scene, camera);
         };
         animate();
@@ -84,10 +75,10 @@ class Astronaut extends Component {
 
       // onError callback
       err => {
-        console.error("An error happened", err);
+        console.error("An error happened: ", err);
       }
     );
-
+    scene.overrideMaterial = new THREE.MeshPhongMaterial({ color: "#FF1A82" });
     camera.position.z = 145;
 
     // Shape
@@ -104,4 +95,4 @@ class Astronaut extends Component {
   }
 }
 
-export default Astronaut;
+export default connect()(Astronaut);

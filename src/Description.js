@@ -37,8 +37,8 @@ class Description extends Component {
           .{" "}
         </p>
         <h2>Technologies I love</h2>
-        JavaScript (ES6+), React.js, Redux.js, Node.js, Anime.js, WebGL, Three.js, SVGs, Blender,
-        Adobe Illustrator, Git, SASS
+        <p>HTML/CSS, JavaScript (ES6+), React.js, Redux.js, Node.js, Anime.js, WebGL, Three.js, SVGs, Blender,
+        Adobe Illustrator, Git, SASS</p>
       </div>
     );
   }
