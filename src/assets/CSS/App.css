@@ -91,7 +91,8 @@ a:focus {
   z-index: 1000;
 }
 
-#bio, #projects {
+#bio,
+#projects {
   display: flex;
   width: 80vw;
   justify-content: space-between;
@@ -103,11 +104,38 @@ a:focus {
 #about {
   z-index: -20;
   color: white;
+  height: 100%;
 }
 
 .desc p {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 28px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.desc ul {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+  list-style-type: circle;
+}
+
+.desc li {
+  width: 150px;
+  height: 0px;
+  display: inline-block;
+  line-height: 0px;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  list-style-position: inside;
+  list-style-type: circle;
+  position: relative;
 }
 
 #about h1,
@@ -121,12 +149,9 @@ a:focus {
 }
 
 .desc {
-  font-size: 14px;
   padding: 30px;
-  line-height: 28px;
   width: 50%;
   margin: 0;
-  font-weight: 300;
 }
 
 .desc a:link,
@@ -181,7 +206,7 @@ a:focus {
   width: 300px;
   height: 300px;
   border-radius: 100%;
-  background-color:#00b7ff;
+  background-color: #00b7ff;
 }
 
 ::selection {
@@ -235,5 +260,8 @@ a:focus {
   }
   #projects h1 {
     padding: 0px;
+  }
+  .desc ul li {
+    width:120px;
   }
 }
