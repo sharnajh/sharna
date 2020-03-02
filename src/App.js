@@ -1,6 +1,7 @@
 import React from "react";
 import "./assets/CSS/App.css";
 import StarrySky from "./assets/SVGs/StarrySky";
+import FixedInfo from "./FixedInfo";
 import Home from "./Home";
 import About from "./About";
 import Portfolio from "./Portfolio";
@@ -10,7 +11,7 @@ const App = () => {
   return (
     <div>
       <StarrySky />
-      <div id="email">sharnajh@gmail.com</div>
+      <FixedInfo />
       <Home />
       <About />
       {/* <Portfolio /> */}
