@@ -40,7 +40,11 @@ class FixedInfo extends Component {
             <FaStackOverflow className="icon" size={20} />
           </a>
         </div>
-        <div id="email">sharnajh@gmail.com</div>
+        <div id="email"><a
+            href="mailto:sharnajh@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >sharnajh@gmail.com</a></div>
       </div>
     );
   }

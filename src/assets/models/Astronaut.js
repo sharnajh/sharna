@@ -44,7 +44,8 @@ class Astronaut extends Component {
 
     // Orbit Control
     let controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableZoom = false;
+    controls.minDistance = 160;
+    controls.maxDistance = 300;
 
     // Models
     let manager = new THREE.LoadingManager();
