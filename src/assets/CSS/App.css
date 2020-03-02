@@ -326,6 +326,10 @@ a:link, a:active, a:visited {
   transform: rotate(90deg);
 }
 
+#socialmedia svg {
+  transform: rotate(270deg);
+}
+
 #socialmedia:after {
   content: "";
   width: 150px;
@@ -338,7 +342,6 @@ a:link, a:active, a:visited {
 }
 
 .icon {
-  transform: rotate(270deg);
   margin: 15px;
   color: white;
   cursor: pointer;
@@ -393,6 +396,15 @@ a:link, a:active, a:visited {
   font-weight: 200;
   font-family: Futura;
   font-size: 15px;
+}
+
+#message h1 {
+  margin-bottom: 0;
+}
+
+#message h1:before {
+  width: 0%;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 600px) {

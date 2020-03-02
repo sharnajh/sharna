@@ -59,6 +59,11 @@ class Form extends Component {
         <button id="submit" type="submit">
           <IoIosSend size={25} />
         </button>
+        {/* <h2
+          style={{ textAlign: "center", fontSize: "18px", marginTop: "10px" }}
+        >
+          <a href="mailto:sharnajh@gmail.com">sharnajh@gmail.com </a>
+        </h2> */}
       </form>
     );
   }
