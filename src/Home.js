@@ -1,21 +1,12 @@
 import React, { Component } from "react";
-import Loading from "./assets/SVGs/Loading";
 import Logo from "./assets/SVGs/Logo.js";
-import { connect } from "react-redux";
 
 class Home extends Component {
   render() {
-    const { loaded } = this.props;
     return (
       <div className="section" id="main">
         <div id="logowrapper">
-          {document.body.clientWidth < 600 ? (
-            <Logo />
-          ) : loaded ? (
-            <Logo />
-          ) : (
-            <Loading />
-          )}
+          <Logo />
         </div>
 
         <h1>
@@ -27,10 +18,4 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps({ loaded }) {
-  return {
-    loaded
-  };
-}
-
-export default connect(mapStateToProps)(Home);
+export default Home;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Form from "./Form";
 import SocialMediaIcons from "./SocialMediaIcons";
-import { FaFileExcel } from "react-icons/fa";
 
 class Contact extends Component {
   render() {

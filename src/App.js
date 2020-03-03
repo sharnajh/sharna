@@ -4,7 +4,7 @@ import StarrySky from "./assets/SVGs/StarrySky";
 import FixedInfo from "./FixedInfo";
 import Home from "./Home";
 import About from "./About";
-import Portfolio from "./Portfolio";
+//import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 
 const App = () => {

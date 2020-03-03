@@ -1,20 +1,22 @@
 import React, { Component } from "react";
 import anime from "animejs/lib/anime.es.js";
+import { connect } from "react-redux";
+import { setLoaded } from "../../actions/loaded";
 
 class Logo extends Component {
-  componentDidMount() {
+  movingBlobs = () => {
     anime({
       targets: "#whiteStrokeBlob",
       d: [
         {
           value:
             "M355.321,114c18.27,103.1774,95.3143,261.0517-41,267-157.2085,6.86-226.0878,58.3474-250-33C21.0543,182.7159,8.6,226.1619,93.321,90,173.96-39.6008,338.4088,18.4919,355.321,114Z"
-        }   
+        }
       ],
       duration: 1500,
       easing: "linear",
       loop: true,
-      direction: 'alternate'
+      direction: "alternate"
     });
     anime({
       targets: "#blueblob",
@@ -27,19 +29,24 @@ class Logo extends Component {
       duration: 2000,
       easing: "linear",
       loop: true,
-      direction: 'alternate'
+      direction: "alternate"
     });
+  };
+  initAnimation = () => {
+    const { dispatch } = this.props;
     let tl = anime.timeline({
-      loop: false
+      loop: false,
+      changeComplete: function() {
+        dispatch(setLoaded());
+      }
     });
-    tl
-      .add({
-        targets: ".seg",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: "easeOutQuad",
-        duration: 2500,
-        delay: (el, i) => 50 * i
-      })
+    tl.add({
+      targets: ".seg",
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: "easeOutQuad",
+      duration: 2500,
+      delay: (el, i) => 50 * i
+    })
       .add(
         {
           targets: ["#pink"],
@@ -60,6 +67,11 @@ class Logo extends Component {
         },
         2000
       );
+  };
+  componentDidMount() {
+    console.log(this.props);
+    this.movingBlobs();
+    this.initAnimation();
   }
   render() {
     return (
@@ -153,4 +165,11 @@ class Logo extends Component {
   }
 }
 
-export default Logo;
+function mapStateToProps({ loaded }) {
+  console.log("map", loaded);
+  return {
+    loaded
+  };
+}
+
+export default connect(mapStateToProps)(Logo);

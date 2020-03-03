@@ -4,22 +4,16 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import ASTRO from "./astro.gltf";
-import { connect } from "react-redux";
-import { setLoaded } from "../../actions/loaded";
 
 class Astronaut extends Component {
-  componentDidMount() {
-    const { dispatch } = this.props;
+  renderModel = () => {
     // Scene
     const wrapper = document.getElementById("astronautwrapper");
     let scene = new THREE.Scene();
-    let camera = new THREE.PerspectiveCamera(
-      75,
-      wrapper.clientHeight / wrapper.clientWidth,
-      0.2,
-      1000
-    );
-    scene.overrideMaterial = new THREE.MeshPhongMaterial({ color: "#FF1A82" });
+    let camera = new THREE.PerspectiveCamera(75, 500 / 500, 0.2, 1000);
+    scene.overrideMaterial = new THREE.MeshPhongMaterial({
+      color: "#FF1A82"
+    });
     camera.position.z = 160;
 
     // Lights
@@ -39,8 +33,8 @@ class Astronaut extends Component {
     // Render
     let renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setClearColor(0x000000, 0); // the default
-    renderer.setSize(wrapper.clientHeight, wrapper.clientWidth);
-    this.mount.appendChild(renderer.domElement);
+    renderer.setSize(500, 500);
+    wrapper.appendChild(renderer.domElement);
 
     // Orbit Control
     let controls = new OrbitControls(camera, renderer.domElement);
@@ -65,8 +59,8 @@ class Astronaut extends Component {
       // Here the loaded data is assumed to be an object
       gltf => {
         // Update state
-        dispatch(setLoaded());
         // Add the loaded object to the scene
+  
         let model = gltf.scene;
         model.castShadow = true;
         model.position.set(0, -90, 0);
@@ -84,7 +78,7 @@ class Astronaut extends Component {
 
       // onProgress callback
       xhr => {
-        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+        console.log("Loading model");
       },
 
       // onError callback
@@ -92,14 +86,19 @@ class Astronaut extends Component {
         console.error("An error happened: ", err);
       }
     );
+  };
+  componentDidMount() {
+    this.renderModel();
   }
   render() {
     return (
-      <div id="astronautwrapper" ref={ref => (this.mount = ref)}>
+      <div id="astronautwrapper">
         <div id="planet"></div>
       </div>
     );
   }
 }
 
-export default connect()(Astronaut);
+
+
+export default Astronaut;

@@ -2,7 +2,7 @@
 
 body {
   background: linear-gradient(to right, #830095 0%, #160071 100%);
-  font-family: Futura;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: white;
   margin: 0;
 }
@@ -74,10 +74,10 @@ a:link, a:active, a:visited {
 
 .section {
   width: 100vw;
-  display: flex;
+  height: auto;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   margin: 0;
   flex-direction: column;
 }
@@ -108,7 +108,6 @@ a:link, a:active, a:visited {
 }
 
 #about {
-  z-index: -20;
   color: white;
   height: 100%;
 }
@@ -139,7 +138,7 @@ a:link, a:active, a:visited {
   font-weight: 300;
   font-size: 13px;
   left: 10px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
@@ -157,6 +156,7 @@ a:link, a:active, a:visited {
 #about h2,
 #projects h1,
 #message h1 {
+  font-family: Futura;
   font-weight: 50;
   text-align: left;
   margin-bottom: 25px;
@@ -221,7 +221,7 @@ a:link, a:active, a:visited {
 }
 
 #astronautwrapper {
-  width: 50%;
+  width: 500px;
   height: 500px;
   transform: rotate(-20deg);
   display: flex;
