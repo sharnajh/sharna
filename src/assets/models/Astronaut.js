@@ -41,8 +41,8 @@ class Astronaut extends Component {
 
     // Orbit Control
     let controls = new OrbitControls(camera, renderer.domElement);
-    controls.minDistance = 160;
-    controls.maxDistance = 300;
+    controls.enableZoom = false;
+    controls.enablePan = false;
 
     // Models
     let manager = new THREE.LoadingManager();
@@ -62,14 +62,13 @@ class Astronaut extends Component {
       // Here the loaded data is assumed to be an object
       gltf => {
         // Update state
-        // Add the loaded object to the scene
         dispatch(MODELLoaded())
+        // Add the loaded object to the scene
         let model = gltf.scene;
-        model.castShadow = true;
         model.position.set(0, -90, 0);
         model.rotation.x = 300;
-
         scene.add(model);
+
         let animate = function() {
           requestAnimationFrame(animate);
           model.rotation.z += 0.02;
