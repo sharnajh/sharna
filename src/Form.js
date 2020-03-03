@@ -72,32 +72,12 @@ class Form extends Component {
         <button id="submit" type="submit">
           <IoIosSend size={25} />
         </button>
-        <div
-          style={{
-            textAlign: "center",
-            fontSize: "15px",
-            marginTop: "10px",
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontWeight: "200"
-          }}
-        >
+        <div id="clipboardwrapper">
           <a href="mailto:sharnajh@gmail.com">sharnajh@gmail.com</a>{" "}
-          <IoIosCopy
-            onClick={this.copyToClipboard}
-            style={{
-              marginLeft: "5px",
-              backgroundColor: "#fff",
-              borderRadius: "100%",
-              padding: "4px",
-              cursor: "pointer",
-              width: "13px",
-              height: "13px",
-              color: "#830095"
-            }}
-          />
+          <div id="clipboard">
+            <div id="bubble">Copy to clipboard?</div>
+            <IoIosCopy onClick={this.copyToClipboard} />
+          </div>
         </div>
       </form>
     );
