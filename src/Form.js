@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { IoIosSend, IoIosCopy } from "react-icons/io";
+import { IoMdRocket, IoIosCopy } from "react-icons/io";
 
 class Form extends Component {
   state = {
@@ -70,7 +70,7 @@ class Form extends Component {
           onChange={this.setData}
         />
         <button id="submit" type="submit">
-          <IoIosSend size={25} />
+          <IoMdRocket size={25} />
         </button>
         <div id="clipboardwrapper">
           <a href="mailto:sharnajh@gmail.com">sharnajh@gmail.com</a>{" "}
