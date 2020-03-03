@@ -1,7 +1,14 @@
-export const SET_LOADED = "SET_LOADED";
+export const LOGO_LOADED = "LOGO_LOADED";
+export const MODEL_LOADED = "MODEL_LOADED";
 
-export function setLoaded() {
+export function LOGOLoaded() {
     return {
-        type: SET_LOADED
+        type: LOGO_LOADED
+    }
+}
+
+export function MODELLoaded() {
+    return {
+        type: MODEL_LOADED
     }
 }

@@ -13,13 +13,10 @@ class About extends Component {
           <Description />
           {document.body.clientWidth < 600 ? (
             ""
-          ) : this.props.loaded ? (
+          ) : this.props.loaded.logo ? (
             <Astronaut />
           ) : (
-            <div
-              id="astronautwrapper"
-              
-            >
+            <div id="astronautwrapper">
               <Loading />
             </div>
           )}

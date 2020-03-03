@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import anime from "animejs/lib/anime.es.js";
 import { connect } from "react-redux";
-import { setLoaded } from "../../actions/loaded";
+import { LOGOLoaded } from "../../actions/loaded";
 
 class Logo extends Component {
   movingBlobs = () => {
@@ -37,7 +37,7 @@ class Logo extends Component {
     let tl = anime.timeline({
       loop: false,
       changeComplete: function() {
-        dispatch(setLoaded());
+        dispatch(LOGOLoaded());
       }
     });
     tl.add({

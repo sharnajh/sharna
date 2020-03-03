@@ -58,7 +58,7 @@ class ShootingStars extends Component {
   render() {
     const { loaded } = this.props;
     if (this.state.vw > 600) {
-      if (loaded) {
+      if (loaded.model) {
         this.shootingStars();
       }
     } else {

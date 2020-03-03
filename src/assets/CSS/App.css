@@ -227,6 +227,7 @@ a:link, a:active, a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 #planet {
@@ -289,8 +290,8 @@ a:link, a:active, a:visited {
 
 #email {
   position: fixed;
-  bottom: 150px;
-  right: -100px;
+  bottom: 50%;
+  right: -30px;
   letter-spacing: 0.3ch;
   font-weight: 200;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -302,7 +303,7 @@ a:link, a:active, a:visited {
   cursor: pointer;
 }
 
-#email:after {
+/* #email:after {
   content: "";
   width: 150px;
   height: 1px;
@@ -310,12 +311,12 @@ a:link, a:active, a:visited {
   display: inline-block;
   margin-left: 10px;
   opacity: 0.8;
-}
+} */
 
 #socialmedia {
   position: fixed;
-  bottom: 150px;
-  left: -100px;
+  bottom: 50%;
+  left: -30px;
   letter-spacing: 0.3ch;
   font-weight: 200;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -330,7 +331,7 @@ a:link, a:active, a:visited {
   transform: rotate(270deg);
 }
 
-#socialmedia:after {
+/* #socialmedia:after {
   content: "";
   width: 150px;
   height: 1px;
@@ -339,7 +340,7 @@ a:link, a:active, a:visited {
   bottom: 0;
   margin-left: 10px;
   opacity: 0.8;
-}
+} */
 
 .icon {
   margin: 15px;

@@ -4,9 +4,12 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import ASTRO from "./astro.gltf";
+import { MODELLoaded } from "../../actions/loaded";
+import { connect } from "react-redux";
 
 class Astronaut extends Component {
   renderModel = () => {
+    const { dispatch } = this.props;
     // Scene
     const wrapper = document.getElementById("astronautwrapper");
     let scene = new THREE.Scene();
@@ -60,7 +63,7 @@ class Astronaut extends Component {
       gltf => {
         // Update state
         // Add the loaded object to the scene
-  
+        dispatch(MODELLoaded())
         let model = gltf.scene;
         model.castShadow = true;
         model.position.set(0, -90, 0);
@@ -101,4 +104,4 @@ class Astronaut extends Component {
 
 
 
-export default Astronaut;
+export default connect()(Astronaut);
