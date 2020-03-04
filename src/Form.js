@@ -84,7 +84,12 @@ class Form extends Component {
         targets: ".siz",
         translateY: "-300px",
         duration: 250
-      });
+      })
+      .add({
+        targets: ".siz",
+        opacity: [1,0],
+        duration: 200
+      })
   };
   reverseAnim = () => {
     const moo = () => {
@@ -119,13 +124,18 @@ class Form extends Component {
             translateY: "0%",
             translateX: "0%",
             color: "#fff",
-            duration: 100
+            duration: 0
           })
           .add({
             targets: "#submit",
             outlineWidth: "1px",
-            duration: 500,
+            duration: 300,
             easing: "easeInOutSine"
+          })
+          .add({
+            targets: ".siz",
+            opacity: 1,
+            duration: 100
           })
       }
     );
