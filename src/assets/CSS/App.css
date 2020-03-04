@@ -525,6 +525,12 @@ a:active {
   font-weight: 200;
   font-size: 13px;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+#btn:hover {
+  border-color: #ff1a82;
+  transition: 0.5s;
 }
 
 #rectwrap {

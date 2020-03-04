@@ -298,15 +298,15 @@ class Form extends Component {
         <div id="clipboardwrapper">
           <a href="mailto:sharnajh@gmail.com">sharnajh@gmail.com</a>{" "}
           {document.body.clientWidth > 600 && (
-            <div
-              id="clipboard"
-              onMouseEnter={() => this.toggleClipboardBubble(true)}
-              onMouseLeave={() => this.toggleClipboardBubble(false)}
-            >
+            <div id="clipboard">
               <div id="bubble" ref="bubble">
                 Copy to clipboard?
               </div>
-              <IoIosCopy onClick={this.copyToClipboard} />
+              <IoIosCopy
+                onClick={this.copyToClipboard}
+                onMouseEnter={() => this.toggleClipboardBubble(true)}
+                onMouseLeave={() => this.toggleClipboardBubble(false)}
+              />
             </div>
           )}
         </div>
