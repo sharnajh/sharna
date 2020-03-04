@@ -13,6 +13,24 @@ class Form extends Component {
     success: false,
     anim: false
   };
+  validateForm = () => {
+    const { name, email, anim, isSending, success } = this.state;
+    if (
+      isSending === false &&
+      success === false &&
+      anim === false &&
+      name.length > 3 &&
+      email.length > 5 &&
+      email.includes("@")
+    ) {
+      anime({
+        targets: ["#rectwrap rect"],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: "easeOutQuad",
+        duration: 1000
+      });
+    }
+  };
   setFocus = e => {
     this.setState({ focused: e.target.name });
   };
@@ -71,6 +89,12 @@ class Form extends Component {
         easing: "easeInOutSine"
       })
       .add({
+        targets: ["#rectwrap rect"],
+        strokeDashoffset: [0, anime.setDashoffset],
+        easing: "easeOutQuad",
+        duration: 1000
+      })
+      .add({
         targets: ".siz",
         color: "#00b7ff",
         duration: 450
@@ -87,9 +111,9 @@ class Form extends Component {
       })
       .add({
         targets: ".siz",
-        opacity: [1,0],
+        opacity: [1, 0],
         duration: 200
-      })
+      });
   };
   reverseAnim = () => {
     const moo = () => {
@@ -134,9 +158,9 @@ class Form extends Component {
           })
           .add({
             targets: ".siz",
-            opacity: 1,
-            duration: 100
-          })
+            opacity: [0, 1],
+            duration: 300
+          });
       }
     );
   };
@@ -257,7 +281,18 @@ class Form extends Component {
           onFocus={this.setFocus}
           onChange={this.setData}
         />
-        <button id="submit" type="submit">
+        <button id="submit" type="submit" onMouseOver={this.validateForm}>
+          <svg width="100%" height="100%" id="rectwrap">
+            <rect
+              width="100%"
+              height="100%"
+              fill="none"
+              strokeWidth="3"
+              stroke="#FF1A82"
+              strokeDasharray="5000"
+              strokeDashoffset="5000"
+            />
+          </svg>
           <IoMdRocket size={30} className="siz" />
         </button>
         <div id="clipboardwrapper">

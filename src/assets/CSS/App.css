@@ -411,6 +411,7 @@ a:active {
   font-weight: 200;
   font-family: Futura;
   font-size: 15px;
+  position: relative;
 }
 
 #message h1 {
@@ -524,6 +525,11 @@ a:active {
   font-weight: 200;
   font-size: 13px;
   cursor: pointer;
+}
+
+#rectwrap {
+  position: absolute;
+
 }
 
 @media only screen and (max-width: 1000px) {
