@@ -3,7 +3,6 @@ import Description from "./Description";
 import Astronaut from "./assets/models/Astronaut";
 import { connect } from "react-redux";
 import Loading from "./assets/SVGs/Loading";
-import { FaFileExcel } from "react-icons/fa";
 
 class About extends Component {
   render() {

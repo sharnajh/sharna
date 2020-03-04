@@ -6,8 +6,12 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import ASTRO from "./astro.gltf";
 import { MODELLoaded } from "../../actions/loaded";
 import { connect } from "react-redux";
+import Loading from "../SVGs/Loading";
 
 class Astronaut extends Component {
+  state = {
+    loading: false,
+  }
   renderModel = () => {
     const { dispatch } = this.props;
     // Scene
@@ -62,7 +66,8 @@ class Astronaut extends Component {
       // Here the loaded data is assumed to be an object
       gltf => {
         // Update state
-        dispatch(MODELLoaded())
+        dispatch(MODELLoaded());
+        this.setState({ loading: false })
         // Add the loaded object to the scene
         let model = gltf.scene;
         model.position.set(0, -90, 0);
@@ -81,6 +86,7 @@ class Astronaut extends Component {
       // onProgress callback
       xhr => {
         console.log("Loading model");
+        this.setState({ loading: true })
       },
 
       // onError callback
@@ -93,14 +99,21 @@ class Astronaut extends Component {
     this.renderModel();
   }
   render() {
+    const { loading } = this.state;
     return (
       <div id="astronautwrapper">
-        <div id="planet"></div>
+        <div id="planet">
+          {loading ? <Loading style={{ zIndex: "1000" }} /> : ""}
+        </div>
       </div>
     );
   }
 }
 
+function mapStateToProps({ loaded }) {
+  return {
+    loaded
+  };
+}
 
-
-export default connect()(Astronaut);
+export default connect(mapStateToProps)(Astronaut);

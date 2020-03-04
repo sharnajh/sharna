@@ -240,6 +240,9 @@ a:visited {
   height: 300px;
   border-radius: 100%;
   background-color: #00b7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ::selection {
