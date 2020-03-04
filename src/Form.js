@@ -8,7 +8,9 @@ class Form extends Component {
     name: "",
     email: "",
     message: "",
-    focused: ""
+    focused: "",
+    isSending: false,
+    success: false
   };
   setFocus = e => {
     this.setState({ focused: e.target.name });
@@ -28,10 +30,42 @@ class Form extends Component {
         break;
     }
   };
+  sendFeedback(template_id, variables) {
+    window.emailjs
+      .send("gmail", template_id, variables)
+      .then(res => {
+        this.setState(
+          {
+            name: "",
+            email: "",
+            message: "",
+            isSending: false
+          },
+          () => {
+            console.log("Email successfully sent!");
+            this.setState({ success: true })
+          }
+        );
+      })
+      .catch(err => {
+        console.error(
+          "Oh well, you failed. Here some thoughts on the error that occured:",
+          err
+        );
+      });
+  }
   send = e => {
     e.preventDefault();
+    const template_id = "template_7vTIGRG7";
+    this.setState({ isSending: true }, () => {
+      this.sendFeedback(template_id, {
+        "message_html": this.state.message,
+        "from_name": this.state.name,
+        "reply_to": this.state.email
+      });
+    });
     let tl = anime.timeline({
-      easing: "easeInOutSine"
+      easing: "easeInOutSine",
     });
     tl.add({
       targets: ".inp",
@@ -60,12 +94,12 @@ class Form extends Component {
         targets: "#submit",
         outlineWidth: "0px",
         duration: 100,
-        easing: "easeInOutSine",
+        easing: "easeInOutSine"
       })
       .add({
         targets: ".siz",
         color: "#00b7ff",
-        duration:450
+        duration: 450
       })
       .add({
         targets: ".siz",
@@ -76,11 +110,11 @@ class Form extends Component {
         targets: ".siz",
         translateY: "-300px",
         duration: 250
-      })
+      });
   };
   toggleClipboardBubble = toggle => {
     if (toggle) {
-      this.refs.bubble.innerHTML = "Copy to Clipboard?";
+      this.refs.bubble.innerHTML = "Copy to clipboard?";
       anime({
         targets: "#bubble",
         opacity: [0, 1],
@@ -125,7 +159,7 @@ class Form extends Component {
       err => {
         console.error("Async: Could not copy text: ", err);
         this.refs.bubble.innerHTML =
-          "Your browser does not support clipboard copying.";
+          "Your browser does not support this function.";
         anime({
           targets: "#bubble",
           color: "#ff1a82",
@@ -174,16 +208,20 @@ class Form extends Component {
         </button>
         <div id="clipboardwrapper">
           <a href="mailto:sharnajh@gmail.com">sharnajh@gmail.com</a>{" "}
-          {document.body.clientWidth > 600 ? (<div
-            id="clipboard"
-            onMouseEnter={() => this.toggleClipboardBubble(true)}
-            onMouseLeave={() => this.toggleClipboardBubble(false)}
-          >
-            <div id="bubble" ref="bubble">
-              Copy to clipboard?
+          {document.body.clientWidth > 600 ? (
+            <div
+              id="clipboard"
+              onMouseEnter={() => this.toggleClipboardBubble(true)}
+              onMouseLeave={() => this.toggleClipboardBubble(false)}
+            >
+              <div id="bubble" ref="bubble">
+                Copy to clipboard?
+              </div>
+              <IoIosCopy onClick={this.copyToClipboard} />
             </div>
-            <IoIosCopy onClick={this.copyToClipboard} />
-          </div>) : ""}
+          ) : (
+            ""
+          )}
         </div>
       </form>
     );

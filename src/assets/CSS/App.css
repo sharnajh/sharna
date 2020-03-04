@@ -393,6 +393,7 @@ a:active {
 #contactform input::placeholder,
 #contactform textarea::placeholder {
   color: white;
+  opacity: 0.8;
 }
 
 #submit {
