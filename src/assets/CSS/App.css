@@ -502,7 +502,7 @@ a:active {
   align-items: center;
   top: 0;
   width: 96%;
-  margin:5px;
+  margin: 5px;
   height: 81%;
   position: absolute;
   font-size: 15px;
@@ -535,7 +535,6 @@ a:active {
 
 #rectwrap {
   position: absolute;
-
 }
 
 @media only screen and (max-width: 1000px) {
@@ -609,5 +608,8 @@ a:active {
 
   #rectwrap {
     opacity: 0;
+  }
+  input {
+    border-radius: 0;
   }
 }
