@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { IoMdRocket, IoIosCopy, IoIosRocket } from "react-icons/io";
 import anime from "animejs/lib/anime.es.js";
 import Loading from "./assets/SVGs/Loading";
+import Clipboard from "./Clipboard";
 
 class Form extends Component {
   state = {
@@ -14,23 +15,21 @@ class Form extends Component {
     anim: false
   };
   validateForm = () => {
-    const { name, email, anim, isSending, success } = this.state;
-    if (
-      isSending === false &&
-      success === false &&
-      anim === false &&
-      name.length > 3 &&
-      email.length > 5 &&
-      email.includes("@")
-    ) {
-      anime({
-        targets: ["#rectwrap rect"],
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: "easeOutQuad",
-        duration: 1000
-      });
-    }
+    anime({
+      targets: ["#rectwrap rect"],
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: "easeOutQuad",
+      duration: 1000
+    });
   };
+  invalidateForm = () => {
+    anime({
+      targets: ["#rectwrap rect"],
+      strokeDashoffset: [0, anime.setDashoffset],
+      easing: "easeOutQuad",
+      duration: 1000
+    });
+  }
   setFocus = e => {
     this.setState({ focused: e.target.name });
   };
@@ -85,14 +84,14 @@ class Form extends Component {
       .add({
         targets: "#submit",
         outlineWidth: "0px",
-        duration: 100,
+        duration: 0,
         easing: "easeInOutSine"
       })
       .add({
         targets: ["#rectwrap rect"],
-        strokeDashoffset: [0, anime.setDashoffset],
+        opacity: 0,
         easing: "easeOutQuad",
-        duration: 1000
+        duration: 100
       })
       .add({
         targets: ".siz",
@@ -176,65 +175,9 @@ class Form extends Component {
     });
     this.timeline();
   };
-  toggleClipboardBubble = toggle => {
-    if (toggle) {
-      this.refs.bubble.innerHTML = "Copy to clipboard?";
-      anime({
-        targets: "#bubble",
-        opacity: [0, 1],
-        color: "#830095",
-        duration: 200,
-        easing: "linear"
-      });
-      anime({
-        targets: "#clipboardwrapper",
-        color: "#00b7ff",
-        easing: "linear",
-        duration: 200
-      });
-    } else {
-      anime({
-        targets: "#bubble",
-        opacity: [1, 0],
-        duration: 100,
-        easing: "linear"
-      });
-      anime({
-        targets: "#clipboardwrapper",
-        color: "#fff",
-        easing: "linear",
-        duration: 100
-      });
-    }
-  };
-  copyToClipboard = () => {
-    const email = "sharnajh@gmail.com";
-    navigator.clipboard.writeText(email).then(
-      () => {
-        console.log("Async: Copying to clipboard was successful!");
-        this.refs.bubble.innerHTML = "Successfully copied to clipboard!";
-        anime({
-          targets: "#bubble",
-          color: "#830095",
-          easing: "linear",
-          duration: 0
-        });
-      },
-      err => {
-        console.error("Async: Could not copy text: ", err);
-        this.refs.bubble.innerHTML =
-          "Your browser does not support this function.";
-        anime({
-          targets: "#bubble",
-          color: "#ff1a82",
-          easing: "linear",
-          duration: 0
-        });
-      }
-    );
-  };
   render() {
-    const { isSending, success, anim } = this.state;
+    const { isSending, success, anim, name, email } = this.state;
+
     return (
       <form id="contactform" onSubmit={this.send}>
         {isSending && anim === false && success === false && (
@@ -281,35 +224,30 @@ class Form extends Component {
           onFocus={this.setFocus}
           onChange={this.setData}
         />
-        <button id="submit" type="submit" onMouseOver={this.validateForm}>
-          <svg width="100%" height="100%" id="rectwrap">
-            <rect
+        {name.length > 0 && email.length > 0 && email.includes("@") && (
+          <button id="submit" type="submit">
+            <svg
               width="100%"
               height="100%"
-              fill="none"
-              strokeWidth="3"
-              stroke="#FF1A82"
-              strokeDasharray="5000"
-              strokeDashoffset="5000"
-            />
-          </svg>
-          <IoMdRocket size={30} className="siz" />
-        </button>
-        <div id="clipboardwrapper">
-          <a href="mailto:sharnajh@gmail.com">sharnajh@gmail.com</a>{" "}
-          {document.body.clientWidth > 600 && (
-            <div id="clipboard">
-              <div id="bubble" ref="bubble">
-                Copy to clipboard?
-              </div>
-              <IoIosCopy
-                onClick={this.copyToClipboard}
-                onMouseEnter={() => this.toggleClipboardBubble(true)}
-                onMouseLeave={() => this.toggleClipboardBubble(false)}
+              id="rectwrap"
+              onMouseEnter={this.validateForm}
+              onMouseLeave={this.invalidateForm}
+            >
+              <rect
+                width="100%"
+                height="100%"
+                fill="none"
+                strokeWidth="3"
+                stroke="#FF1A82"
+                strokeDasharray="5000"
+                strokeDashoffset="5000"
               />
-            </div>
-          )}
-        </div>
+            </svg>
+            <IoMdRocket size={30} className="siz" />
+          </button>
+        )}
+
+        <Clipboard />
       </form>
     );
   }
