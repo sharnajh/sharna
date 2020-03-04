@@ -3,6 +3,7 @@ import { IoMdRocket, IoIosCopy, IoIosRocket } from "react-icons/io";
 import anime from "animejs/lib/anime.es.js";
 import Loading from "./assets/SVGs/Loading";
 import Clipboard from "./Clipboard";
+import { TorusGeometry } from "three";
 
 class Form extends Component {
   state = {
@@ -12,7 +13,8 @@ class Form extends Component {
     focused: "",
     isSending: false,
     success: false,
-    anim: false
+    anim: false,
+    failure: false
   };
   validateForm = toggle => {
     const { anim, isSending } = this.state;
@@ -64,6 +66,7 @@ class Form extends Component {
           "Oh well, you failed. Here some thoughts on the error that occured:",
           err
         );
+        this.setState({ failure: true });
       });
   }
 
@@ -129,7 +132,8 @@ class Form extends Component {
         message: "",
         isSending: false,
         success: false,
-        anim: true
+        anim: true,
+        failure: false
       },
       () => {
         let tl = anime.timeline({
@@ -180,7 +184,7 @@ class Form extends Component {
     this.timeline();
   };
   render() {
-    const { isSending, success, anim, name, email } = this.state;
+    const { isSending, success, anim, name, email, failure } = this.state;
 
     return (
       <form id="contactform" onSubmit={this.send}>
@@ -195,6 +199,14 @@ class Form extends Component {
             <p>Your message is on it's way!</p>
             <button id="btn" onClick={this.reverseAnim}>
               Send another
+            </button>
+          </div>
+        )}
+        {isSending && anime === false && success === false && failure && (
+          <div id="update">
+            <p>Oh oh, there was an error.</p>
+            <button id="btn" onClick={this.reverseAnim}>
+              Try Again
             </button>
           </div>
         )}
