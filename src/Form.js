@@ -22,14 +22,14 @@ class Form extends Component {
             targets: ["#rectwrap rect"],
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: "easeOutQuad",
-            duration: 1000,
+            duration: 650,
             reverse: true
           })
         : anime({
             targets: ["#rectwrap rect"],
             strokeDashoffset: [0, anime.setDashoffset],
             easing: "easeOutQuad",
-            duration: 1000,
+            duration: 700,
             reverse: true
           });
     }
@@ -232,14 +232,10 @@ class Form extends Component {
         <button
           id="submit"
           type="submit"
+          onMouseEnter={() => this.validateForm(true)}
+          onMouseLeave={() => this.validateForm(false)}
         >
-          <svg
-            width="100%"
-            height="100%"
-            id="rectwrap"
-            onMouseEnter={() => this.validateForm(true)}
-            onMouseLeave={() => this.validateForm(false)}
-          >
+          <svg width="100%" height="100%" id="rectwrap">
             <rect
               width="100%"
               height="100%"
