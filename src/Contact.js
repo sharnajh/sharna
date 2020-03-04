@@ -12,6 +12,7 @@ const Contact = () => {
           inbox is open for any other kind of collaborations — or just to say
           hi!
         </p>
+        <Form />
         {document.body.clientWidth < 600 ? (
           <div
             style={{
@@ -21,14 +22,9 @@ const Contact = () => {
               alignItems: "center"
             }}
           >
-            <a href="mailto:sharnajh@gmail.com">
-              <h2 style={{ fontSize: "23px" }}>sharnajh@gmail.com</h2>
-            </a>
             <SocialMediaIcons />
           </div>
-        ) : (
-          <Form />
-        )}
+        ) : ""}
       </div>
     </div>
   );

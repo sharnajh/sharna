@@ -371,10 +371,9 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
   width: 50%;
   position: relative;
-  margin-bottom: 30px;
+  overflow: hidden;
 }
 
 #contactform input,
@@ -396,12 +395,14 @@ a:active {
   color: white;
 }
 
-#contactform button {
+#submit {
   padding: 15px;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
+  outline: 1px solid white;
+  outline-offset: -1px;
+  border: 0;
   cursor: pointer;
   background-color: transparent;
   color: white;
@@ -421,7 +422,7 @@ a:active {
 
 #clipboardwrapper {
   font-size: 15px;
-  margin-top: 10px;
+  margin-top: 30px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -467,8 +468,8 @@ a:active {
   position: absolute;
   display: inline-block;
   vertical-align: -50%;
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   bottom: -5px;
   right: 47%;
   border-left: 5px solid transparent;
@@ -480,7 +481,7 @@ a:active {
   width: 100vw;
   font-size: 12px;
   font-weight: 200;
-  padding-bottom:10px;
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -488,6 +489,12 @@ a:active {
 
 #footer:hover {
   color: #00b7ff;
+}
+
+@media only screen and (max-width: 1000px) {
+  #contactform {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -531,6 +538,7 @@ a:active {
 
   #message {
     width: 100%;
+    padding: 0;
   }
 
   #message h1:before {
@@ -539,7 +547,7 @@ a:active {
   }
 
   #message p {
-    width: 80%;
+    width: 90%;
     margin: 20px;
   }
 
