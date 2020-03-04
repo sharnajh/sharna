@@ -374,6 +374,7 @@ a:active {
   width: 50%;
   position: relative;
   overflow: hidden;
+  z-index: 500;
 }
 
 #contactform input,
@@ -490,6 +491,38 @@ a:active {
 
 #footer:hover {
   color: #00b7ff;
+}
+
+#update {
+  z-index: 2000;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 96%;
+  margin:5px;
+  height: 81%;
+  position: absolute;
+  font-size: 15px;
+}
+
+#update p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#btn {
+  width: 150px;
+  border-radius: 0;
+  border: 0;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: 200;
+  font-size: 13px;
 }
 
 @media only screen and (max-width: 1000px) {

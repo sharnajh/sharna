@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { IoMdRocket, IoIosCopy } from "react-icons/io";
+import { IoMdRocket, IoIosCopy, IoIosRocket } from "react-icons/io";
 import anime from "animejs/lib/anime.es.js";
-import { FaBlackTie } from "react-icons/fa";
+import Loading from "./assets/SVGs/Loading";
 
 class Form extends Component {
   state = {
@@ -10,7 +10,8 @@ class Form extends Component {
     message: "",
     focused: "",
     isSending: false,
-    success: false
+    success: false,
+    anim: false
   };
   setFocus = e => {
     this.setState({ focused: e.target.name });
@@ -34,18 +35,8 @@ class Form extends Component {
     window.emailjs
       .send("gmail", template_id, variables)
       .then(res => {
-        this.setState(
-          {
-            name: "",
-            email: "",
-            message: "",
-            isSending: false
-          },
-          () => {
-            console.log("Email successfully sent!");
-            this.setState({ success: true })
-          }
-        );
+        console.log("Email successfully sent!");
+        this.setState({ success: true });
       })
       .catch(err => {
         console.error(
@@ -54,18 +45,16 @@ class Form extends Component {
         );
       });
   }
-  send = e => {
-    e.preventDefault();
-    const template_id = "template_7vTIGRG7";
-    this.setState({ isSending: true }, () => {
-      this.sendFeedback(template_id, {
-        "message_html": this.state.message,
-        "from_name": this.state.name,
-        "reply_to": this.state.email
-      });
-    });
+
+  timeline = () => {
+    const moo = () => {
+      this.setState({ anim: false });
+    };
     let tl = anime.timeline({
       easing: "easeInOutSine",
+      changeComplete: function() {
+        moo();
+      }
     });
     tl.add({
       targets: ".inp",
@@ -75,21 +64,6 @@ class Form extends Component {
       duration: 350,
       delay: (el, i) => 150 * i
     })
-      // .add({
-      //   targets: ".inp",
-      //   height: "0",
-      //   width: "0",
-      //   padding: 0,
-      //   marginBottom: 0,
-      //   easing: "easeInOutSine",
-      //   duration: 400
-      // })
-      // .add({
-      //   targets: "#submit",
-      //   height: "250px",
-      //   duration: 400,
-      //   easing: "easeInOutSine"
-      // })
       .add({
         targets: "#submit",
         outlineWidth: "0px",
@@ -111,6 +85,62 @@ class Form extends Component {
         translateY: "-300px",
         duration: 250
       });
+  };
+  reverseAnim = () => {
+    const moo = () => {
+      this.setState({ anim: false });
+    };
+    this.setState(
+      {
+        name: "",
+        email: "",
+        message: "",
+        isSending: false,
+        success: false,
+        anim: true
+      },
+      () => {
+        let tl = anime.timeline({
+          easing: "easeInOutSine",
+          changeComplete: function() {
+            moo();
+          }
+        });
+        tl.add({
+          targets: ".inp",
+          translateX: "0%",
+          opacity: [0, 1],
+          easing: "easeInOutSine",
+          duration: 350,
+          delay: (el, i) => 150 * i
+        })
+          .add({
+            targets: ".siz",
+            translateY: "0%",
+            translateX: "0%",
+            color: "#fff",
+            duration: 100
+          })
+          .add({
+            targets: "#submit",
+            outlineWidth: "1px",
+            duration: 500,
+            easing: "easeInOutSine"
+          })
+      }
+    );
+  };
+  send = e => {
+    e.preventDefault();
+    const template_id = "template_7vTIGRG7";
+    this.setState({ anim: true, isSending: true }, () => {
+      this.sendFeedback(template_id, {
+        message_html: this.state.message,
+        from_name: this.state.name,
+        reply_to: this.state.email
+      });
+    });
+    this.timeline();
   };
   toggleClipboardBubble = toggle => {
     if (toggle) {
@@ -170,9 +200,23 @@ class Form extends Component {
     );
   };
   render() {
-    //const { focused } = this.state;
+    const { isSending, success, anim } = this.state;
     return (
       <form id="contactform" onSubmit={this.send}>
+        {isSending && anim === false && success === false && (
+          <div id="update">
+            <Loading />
+          </div>
+        )}
+        {isSending && anim === false && success && (
+          <div id="update">
+            <IoIosRocket size={40} />
+            <p>Your message is on it's way!</p>
+            <button id="btn" onClick={this.reverseAnim}>
+              Send another
+            </button>
+          </div>
+        )}
         <input
           className="inp"
           name="name"
@@ -208,7 +252,7 @@ class Form extends Component {
         </button>
         <div id="clipboardwrapper">
           <a href="mailto:sharnajh@gmail.com">sharnajh@gmail.com</a>{" "}
-          {document.body.clientWidth > 600 ? (
+          {document.body.clientWidth > 600 && (
             <div
               id="clipboard"
               onMouseEnter={() => this.toggleClipboardBubble(true)}
@@ -219,8 +263,6 @@ class Form extends Component {
               </div>
               <IoIosCopy onClick={this.copyToClipboard} />
             </div>
-          ) : (
-            ""
           )}
         </div>
       </form>
