@@ -444,10 +444,6 @@ a:active {
   justify-content: center;
 }
 
-#clipboard:hover #bubble {
-  opacity: 1;
-}
-
 #bubble {
   opacity: 0;
   position: absolute;
@@ -459,7 +455,7 @@ a:active {
   font-size: 12px;
   font-weight: 300;
   top: -33px;
-  left: -42px;
+  vertical-align: -50%;
   background-color: white;
   border-radius: 5px;
   color: #830095;
@@ -470,6 +466,7 @@ a:active {
   content: "";
   position: absolute;
   display: inline-block;
+  vertical-align: -50%;
   width: 0; 
   height: 0; 
   bottom: -5px;
