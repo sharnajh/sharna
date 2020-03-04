@@ -167,7 +167,7 @@ a:visited {
   white-space: nowrap;
 }
 
-#about h1:before,
+/* #about h1:before,
 #projects h1:before,
 #message h1:before {
   content: "";
@@ -178,7 +178,7 @@ a:visited {
   width: 50px;
   height: 2px;
   background-color: white;
-}
+} */
 
 .desc {
   padding: 30px;
@@ -494,6 +494,10 @@ a:active {
 @media only screen and (max-width: 1000px) {
   #contactform {
     width: 80%;
+  }
+
+  #contractform input {
+    border-radius: 0px;
   }
 }
 

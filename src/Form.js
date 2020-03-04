@@ -159,7 +159,6 @@ class Form extends Component {
           onFocus={this.setFocus}
           onChange={this.setData}
           multiple={false}
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           required
         />
         <textarea
