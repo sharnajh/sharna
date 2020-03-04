@@ -14,22 +14,26 @@ class Form extends Component {
     success: false,
     anim: false
   };
-  validateForm = () => {
-    anime({
-      targets: ["#rectwrap rect"],
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: "easeOutQuad",
-      duration: 1000
-    });
+  validateForm = toggle => {
+    const { anim, isSending } = this.state;
+    if (anim === false && isSending === false) {
+      toggle
+        ? anime({
+            targets: ["#rectwrap rect"],
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: "easeOutQuad",
+            duration: 1000,
+            reverse: true
+          })
+        : anime({
+            targets: ["#rectwrap rect"],
+            strokeDashoffset: [0, anime.setDashoffset],
+            easing: "easeOutQuad",
+            duration: 1000,
+            reverse: true
+          });
+    }
   };
-  invalidateForm = () => {
-    anime({
-      targets: ["#rectwrap rect"],
-      strokeDashoffset: [0, anime.setDashoffset],
-      easing: "easeOutQuad",
-      duration: 1000
-    });
-  }
   setFocus = e => {
     this.setState({ focused: e.target.name });
   };
@@ -224,28 +228,36 @@ class Form extends Component {
           onFocus={this.setFocus}
           onChange={this.setData}
         />
-        {name.length > 0 && email.length > 0 && email.includes("@") && (
-          <button id="submit" type="submit">
-            <svg
+
+        <button
+          id="submit"
+          type="submit"
+        >
+          <svg
+            width="100%"
+            height="100%"
+            id="rectwrap"
+            onMouseEnter={() => this.validateForm(true)}
+            onMouseLeave={() => this.validateForm(false)}
+          >
+            <rect
               width="100%"
               height="100%"
-              id="rectwrap"
-              onMouseEnter={this.validateForm}
-              onMouseLeave={this.invalidateForm}
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="none"
-                strokeWidth="3"
-                stroke="#FF1A82"
-                strokeDasharray="5000"
-                strokeDashoffset="5000"
-              />
-            </svg>
-            <IoMdRocket size={30} className="siz" />
-          </button>
-        )}
+              fill="none"
+              strokeWidth="3"
+              stroke="#FF1A82"
+              strokeDasharray="5000"
+              strokeDashoffset="5000"
+              style={{
+                opacity:
+                  name.length > 0 && email.length > 0 && email.includes("@")
+                    ? "1"
+                    : "0"
+              }}
+            />
+          </svg>
+          <IoMdRocket size={30} className="siz" />
+        </button>
 
         <Clipboard />
       </form>
