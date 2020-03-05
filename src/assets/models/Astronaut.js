@@ -15,7 +15,6 @@ class Astronaut extends Component {
   renderModel = () => {
     const { dispatch } = this.props;
     // Scene
-    const wrapper = document.getElementById("astronautwrapper");
     let scene = new THREE.Scene();
     let camera = new THREE.PerspectiveCamera(75, 500 / 500, 0.2, 1000);
     scene.overrideMaterial = new THREE.MeshPhongMaterial({
@@ -41,7 +40,7 @@ class Astronaut extends Component {
     let renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setClearColor(0x000000, 0); // the default
     renderer.setSize(500, 500);
-    wrapper.appendChild(renderer.domElement);
+    this.mount.appendChild(renderer.domElement);
 
     // Orbit Control
     let controls = new OrbitControls(camera, renderer.domElement);
@@ -101,7 +100,7 @@ class Astronaut extends Component {
   render() {
     const { loading } = this.state;
     return (
-      <div id="astronautwrapper">
+      <div id="astronautwrapper" ref={ref => this.mount = ref}>
         <div id="planet">
           {loading ? <Loading style={{ zIndex: "1000" }} /> : ""}
         </div>
