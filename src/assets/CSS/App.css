@@ -609,7 +609,7 @@ a:active {
   #rectwrap {
     opacity: 0;
   }
-  input {
+  input, textarea {
     border-radius: 0;
   }
 }
