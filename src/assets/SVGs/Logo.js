@@ -69,7 +69,6 @@ class Logo extends Component {
       );
   };
   componentDidMount() {
-    console.log(this.props);
     this.movingBlobs();
     this.initAnimation();
   }
@@ -166,7 +165,6 @@ class Logo extends Component {
 }
 
 function mapStateToProps({ loaded }) {
-  console.log("map", loaded);
   return {
     loaded
   };
