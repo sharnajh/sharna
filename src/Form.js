@@ -185,7 +185,6 @@ class Form extends Component {
   };
   render() {
     const { isSending, success, anim, name, email, failure } = this.state;
-
     return (
       <form id="contactform" onSubmit={this.send}>
         {isSending && anim === false && success === false && (
@@ -266,7 +265,6 @@ class Form extends Component {
           </svg>
           <IoMdRocket size={30} className="siz" />
         </button>
-
         <Clipboard />
       </form>
     );

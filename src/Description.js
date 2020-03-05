@@ -11,7 +11,7 @@ class Description extends Component {
           things for the web that are both beautifully designed and efficiently
           coded. <br />
           I'm an inquisitive, ambitious, and passionate coder currently seeking{" "}
-          <a href="/">
+          <a href="#contact">
             <span>new opportunities</span>
           </a>{" "}
           as a web or frontend developer.
