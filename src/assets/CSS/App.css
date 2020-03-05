@@ -669,4 +669,12 @@ a:active {
   input, textarea {
     border-radius: 0;
   }
+  #navbar {
+    font-size: 15px;
+  }
+
+  #navbar ul, #logo-nav {
+    margin: 0;
+  }
+
 }
