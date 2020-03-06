@@ -111,13 +111,7 @@ a:visited {
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  margin-top: 25px;
-  margin-bottom: 15px;
   height: 100vh;
-}
-
-#bio {
-  margin-bottom: 25px;
 }
 
 .desc p {
