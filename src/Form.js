@@ -1,16 +1,14 @@
 import React, { Component } from "react";
-import { IoMdRocket, IoIosCopy, IoIosRocket } from "react-icons/io";
+import { IoMdRocket, IoIosRocket } from "react-icons/io";
 import anime from "animejs/lib/anime.es.js";
 import Loading from "./assets/SVGs/Loading";
 import Clipboard from "./Clipboard";
-import { TorusGeometry } from "three";
 
 class Form extends Component {
   state = {
     name: "",
     email: "",
     message: "",
-    focused: "",
     isSending: false,
     success: false,
     anim: false,
@@ -35,9 +33,6 @@ class Form extends Component {
             reverse: true
           });
     }
-  };
-  setFocus = e => {
-    this.setState({ focused: e.target.name });
   };
   setData = e => {
     switch (e.target.name) {
@@ -216,7 +211,6 @@ class Form extends Component {
           value={this.state.name}
           type="text"
           placeholder="Name"
-          onFocus={this.setFocus}
           onChange={this.setData}
           minLength={3}
           required
@@ -227,7 +221,6 @@ class Form extends Component {
           value={this.state.email}
           type="text"
           placeholder="Email"
-          onFocus={this.setFocus}
           onChange={this.setData}
           multiple={false}
           required
@@ -237,7 +230,6 @@ class Form extends Component {
           name="message"
           value={this.state.message}
           placeholder="Message"
-          onFocus={this.setFocus}
           onChange={this.setData}
         />
 

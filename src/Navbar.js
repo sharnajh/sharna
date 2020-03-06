@@ -1,6 +1,15 @@
 import React, { Component } from "react";
+import anime from "animejs/lib/anime.es.js";
 
 class Navbar extends Component {
+    componentDidMount() {
+        anime({
+            targets: "#navbar",
+            translateY: [-80, 0],
+            duration: 800,
+            easing: "linear"
+        })
+    }
   render() {
     return (
       <div id="navbar">
