@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import anime from "animejs/lib/anime.es.js";
+
 import { MdMenu } from "react-icons/md";
 
 class Navbar extends Component {
@@ -15,7 +16,7 @@ class Navbar extends Component {
     return (
       <div id="navbar">
         <a href="#main">
-          <div id="logo-nav">Sharna.dev</div>
+          <div id="logo-nav"><p>SHARNA.DEV</p></div>
         </a>
         {document.body.clientWidth < 600 ? (
         //   <MdMenu size={25} />
