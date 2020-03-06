@@ -107,13 +107,13 @@ class Form extends Component {
       })
       .add({
         targets: ".siz",
-        translateY: "20px",
+        translateY: "30px",
         duration: 250
       })
       .add({
         targets: ".siz",
         translateY: "-300px",
-        duration: 250
+        duration: 400
       })
       .add({
         targets: ".siz",
@@ -245,6 +245,12 @@ class Form extends Component {
           type="submit"
           onMouseEnter={() => this.validateForm(true)}
           onMouseLeave={() => this.validateForm(false)}
+          style={{
+            opacity:
+                  name.length > 0 && email.length > 0 && email.includes("@")
+                    ? "1"
+                    : "0.5"
+          }}
         >
           <svg width="100%" height="100%" id="rectwrap">
             <rect
