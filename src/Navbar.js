@@ -18,10 +18,7 @@ class Navbar extends Component {
         <a href="#main">
           <div id="logo-nav"><p>SHARNA.DEV</p></div>
         </a>
-        {document.body.clientWidth < 600 ? (
-        //   <MdMenu size={25} />
-        ""
-        ) : (
+     
           <ul>
             <a href="#about">
               <li>About</li>
@@ -37,7 +34,7 @@ class Navbar extends Component {
               <li>Contact</li>
             </a>
           </ul>
-        )}
+
       </div>
     );
   }
