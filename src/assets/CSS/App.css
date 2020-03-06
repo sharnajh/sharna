@@ -111,13 +111,12 @@ a:visited {
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  margin-top: 50px;
+margin-top: 25px;
   height: 100vh;
 }
 
 #about {
   color: white;
-  height: 100%;
 }
 
 .desc p {
