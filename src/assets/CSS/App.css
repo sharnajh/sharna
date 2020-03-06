@@ -111,6 +111,7 @@ a:visited {
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  margin-top: 50px;
   height: 100vh;
 }
 
@@ -515,6 +516,7 @@ a:active {
   position: fixed;
   top:0;
   background: linear-gradient(to right, #830095 0%, #160071 100%);
+  box-shadow: 0 4px 22px -23px black;
   z-index: 9000;
   display: flex;
   justify-content: space-between;
