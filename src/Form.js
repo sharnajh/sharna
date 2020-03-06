@@ -107,13 +107,14 @@ class Form extends Component {
       })
       .add({
         targets: ".siz",
-        translateY: "30px",
+        translateY: "40px",
         duration: 250
       })
       .add({
         targets: ".siz",
-        translateY: "-300px",
-        duration: 400
+        translateY: "-350px",
+        easing: "easeOutQuad",
+        duration: 500
       })
       .add({
         targets: ".siz",
@@ -203,7 +204,7 @@ class Form extends Component {
         )}
         {isSending && anime === false && success === false && failure && (
           <div id="update">
-            <p>Oh oh, there was an error.</p>
+            <p>Uh-oh, there was an error.</p>
             <button id="btn" onClick={this.reverseAnim}>
               Try Again
             </button>
