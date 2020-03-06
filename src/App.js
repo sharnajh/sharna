@@ -19,7 +19,7 @@ const App = () => {
       <About />
       {/* <Portfolio /> */}
       <Contact />
-      <Footer />
+      {document.body.clientWidth < 600 && <Footer />}
     </div>
   );
 };
