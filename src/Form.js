@@ -107,8 +107,8 @@ class Form extends Component {
       })
       .add({
         targets: ".siz",
-        translateY: "-350px",
-        easing: "easeOutQuad",
+        translateY: "-600px",
+        easing: "easeInQuad",
         duration: 500
       })
       .add({
@@ -240,9 +240,9 @@ class Form extends Component {
           onMouseLeave={() => this.validateForm(false)}
           style={{
             opacity:
-                  name.length > 0 && email.length > 0 && email.includes("@")
-                    ? "1"
-                    : "0.5"
+              name.length > 0 && email.length > 0 && email.includes("@")
+                ? "1"
+                : "0.5"
           }}
         >
           <svg width="100%" height="100%" id="rectwrap">

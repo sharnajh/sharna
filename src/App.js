@@ -14,7 +14,7 @@ const App = () => {
     <div>
       <Navbar />
       <StarrySky />
-      <FixedInfo />
+      {document.body.clientWidth > 600 && <FixedInfo />}
       <Home />
       <About />
       {/* <Portfolio /> */}
