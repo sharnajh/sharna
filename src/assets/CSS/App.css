@@ -499,7 +499,7 @@ a:active {
 
 #navbar {
   padding: 10px;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   top: 0;
   background: linear-gradient(to right, #830095 0%, #160071 100%);
@@ -511,6 +511,36 @@ a:active {
   font-family: Futura;
   font-size: 23px;
 }
+
+#v {
+  color: white;
+  cursor: pointer;
+}
+
+#sm {
+  position: fixed;
+  z-index: 9000;
+  top: 50px;
+  background: linear-gradient(to right, #830095 0%, #160071 100%);
+}
+
+#sm ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#sm li {
+  width: 100vw;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 
 #navbar ul {
   margin: 0;
@@ -642,7 +672,7 @@ a:active {
     border-radius: 0;
   }
   #navbar {
-    font-size: 15px;
+    width: 95.5vw;
   }
 
   #navbar ul,
