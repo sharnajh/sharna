@@ -20,7 +20,7 @@ class Navbar extends Component {
     return (
       <div>
         <div id="navbar">
-          <a href="#main">
+          <a href="https://www.sharna.dev">
             <div id="logo-nav">
               <p>SHARNA.DEV</p>
             </div>
