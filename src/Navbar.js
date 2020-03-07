@@ -18,20 +18,18 @@ class Navbar extends Component {
   toggle = () => {
     const { toggle } = this.state;
     this.setState({ toggle: !toggle }, () => {
-        toggle ? (anime({
-            targets: "#sm",
-            translateY: [0, -500],
-            duration: 200,
-            easing: "linear"
-        })) : (anime({
-            targets: "#sm",
-            translateY: [-500, 0],
-            duration: 500,
-            easing: "linear"
-        }))
+      if (toggle === false) {
+        anime({
+          targets: "#sm",
+          translateY: [-500, 0],
+          duration: 400,
+          easing: "linear"
+        });
+      }
     });
   };
   render() {
+    const { toggle } = this.state;
     return (
       <div>
         <div id="navbar">
@@ -41,11 +39,7 @@ class Navbar extends Component {
             </div>
           </a>
           {document.body.clientWidth < 600 ? (
-            <MdMenu
-              size={30}
-              id="v"
-              onClick={this.toggle}
-            />
+            <MdMenu size={30} id="v" onClick={this.toggle} />
           ) : (
             <ul>
               <a href="#about">
@@ -71,30 +65,34 @@ class Navbar extends Component {
             </ul>
           )}
         </div>
-            <ul id="sm" onClick={this.toggle}>
-              <a href="#about">
-                <li>About</li>
-              </a>
-              <a
-                href="https://github.com/sharnajh"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <li>Projects</li>
-              </a>
-              <a href="#contact">
-                <li>Contact</li>
-              </a>
-              <a
-                href="https://sharna.dev/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <li id="resume">Resume</li>
-              </a>
-              <li><SocialMediaIcons /></li>
-            </ul>
-          </div>
+        {toggle && (
+          <ul id="sm" onClick={this.toggle}>
+            <a href="#about">
+              <li>About</li>
+            </a>
+            <a
+              href="https://github.com/sharnajh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li>Projects</li>
+            </a>
+            <a href="#contact">
+              <li>Contact</li>
+            </a>
+            <a
+              href="https://sharna.dev/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li id="resume">Resume</li>
+            </a>
+            <li>
+              <SocialMediaIcons />
+            </li>
+          </ul>
+        )}
+      </div>
     );
   }
 }
