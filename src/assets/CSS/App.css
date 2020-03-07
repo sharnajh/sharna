@@ -504,7 +504,7 @@ a:active {
   top: 0;
   background: linear-gradient(to right, #830095 0%, #160071 100%);
   box-shadow: 0 4px 22px -23px black;
-  z-index: 9000;
+  z-index: 5000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -519,12 +519,11 @@ a:active {
 
 #sm {
   position: fixed;
-  z-index: 9000;
+  z-index: 4000;
   top: 50px;
   background: linear-gradient(to right, #830095 0%, #160071 100%);
-}
-
-#sm ul {
+  box-shadow:0px 1px 20px -10px black;
+  font-family: Futura;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -532,13 +531,13 @@ a:active {
 
 #sm li {
   width: 100vw;
-  text-transform: uppercase;
   text-align: center;
   font-weight: 200;
   margin: 0;
   padding: 0;
   padding-top: 20px;
   padding-bottom: 20px;
+  border-top: 0.1px solid #830095;
 }
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import anime from "animejs/lib/anime.es.js";
-import SandwichMenu from "./SandwichMenu";
 import { MdMenu } from "react-icons/md";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 class Navbar extends Component {
   state = {
@@ -15,8 +15,23 @@ class Navbar extends Component {
       easing: "linear"
     });
   }
-  render() {
+  toggle = () => {
     const { toggle } = this.state;
+    this.setState({ toggle: !toggle }, () => {
+        toggle ? (anime({
+            targets: "#sm",
+            translateY: [0, -500],
+            duration: 200,
+            easing: "linear"
+        })) : (anime({
+            targets: "#sm",
+            translateY: [-500, 0],
+            duration: 500,
+            easing: "linear"
+        }))
+    });
+  };
+  render() {
     return (
       <div>
         <div id="navbar">
@@ -29,7 +44,7 @@ class Navbar extends Component {
             <MdMenu
               size={30}
               id="v"
-              onClick={() => this.setState({ toggle: !toggle })}
+              onClick={this.toggle}
             />
           ) : (
             <ul>
@@ -56,9 +71,7 @@ class Navbar extends Component {
             </ul>
           )}
         </div>
-        {toggle && (
-          <div id="sm" onClick={() => this.setState({ toggle: !toggle })}>
-            <ul>
+            <ul id="sm" onClick={this.toggle}>
               <a href="#about">
                 <li>About</li>
               </a>
@@ -79,10 +92,9 @@ class Navbar extends Component {
               >
                 <li id="resume">Resume</li>
               </a>
+              <li><SocialMediaIcons /></li>
             </ul>
           </div>
-        )}
-      </div>
     );
   }
 }
