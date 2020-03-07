@@ -109,7 +109,7 @@ class Form extends Component {
         targets: ".siz",
         translateY: "-600px",
         easing: "easeInQuad",
-        duration: 500
+        duration: 600
       })
       .add({
         targets: ".siz",
