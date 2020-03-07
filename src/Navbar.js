@@ -18,7 +18,7 @@ class Navbar extends Component {
   toggle = () => {
     const { toggle } = this.state;
     this.setState({ toggle: !toggle }, () => {
-      if (toggle === false) {
+      if (toggle {
         anime({
           targets: "#sm",
           translateY: [-500, 0],
