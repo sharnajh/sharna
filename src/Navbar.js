@@ -33,6 +33,12 @@ class Navbar extends Component {
             <a href="#contact">
               <li>Contact</li>
             </a>
+            <a
+              href="https://sharna.dev/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            ><li id="resume">Resume</li></a>
+            
           </ul>
 
       </div>

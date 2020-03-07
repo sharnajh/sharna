@@ -498,7 +498,7 @@ a:active {
 }
 
 #navbar {
-  padding: 15px;
+  padding: 10px;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -549,7 +549,7 @@ a:active {
 }
 
 #logo-nav {
-  margin-left: 8px;
+  margin-left: 50px;
   transition: 0.25s;
 }
 
