@@ -578,9 +578,9 @@ a:active {
 }
 
 #logo-nav {
-  margin-left: 45px;
+  margin-left: 40px;
   transition: 0.25s;
-  background-color: #8c00a5;
+  background-color: #ff1a82;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -592,7 +592,7 @@ a:active {
 
 #logo-nav:hover {
   transition: 0.25s;
-  background-color: #160071;
+  background-color:#00b7ff;
 }
 
 @media only screen and (max-width: 1000px) {
