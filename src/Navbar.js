@@ -116,7 +116,7 @@ class Navbar extends Component {
             >
               <li id="resume">Resume</li>
             </a>
-            <li>
+            <li style={{ borderBottom: "0px"}}>
               <SocialMediaIcons />
             </li>
           </ul>
