@@ -503,7 +503,7 @@ a:active {
   position: fixed;
   top: 0;
   background: linear-gradient(to right, #830095 0%, #160071 100%);
-  box-shadow: 0 4px 15px -12px black;
+  box-shadow: 0 4px 15px -14px black;
   z-index: 5000;
   display: flex;
   justify-content: space-between;
