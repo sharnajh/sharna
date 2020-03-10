@@ -3,6 +3,8 @@ import anime from "animejs/lib/anime.es.js";
 import { MdMenu } from "react-icons/md";
 import SocialMediaIcons from "./SocialMediaIcons";
 
+// DRY CODE
+
 class Navbar extends Component {
   state = {
     toggle: false
