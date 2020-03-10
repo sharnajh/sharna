@@ -30,11 +30,11 @@ class Astronaut extends Component {
     lights[0] = new THREE.DirectionalLight("#00b7ff", 1);
     lights[0].position.set(1, 0, 0);
 
-    lights[2] = new THREE.DirectionalLight("#00b7ff", 1);
-    lights[2].position.set(-0.75, -1, 0.5);
+    lights[1] = new THREE.DirectionalLight("#00b7ff", 1);
+    lights[1].position.set(-0.75, -1, 0.5);
     scene.add(lights[0]);
 
-    scene.add(lights[2]);
+    scene.add(lights[1]);
 
     // Render
     let renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
