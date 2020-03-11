@@ -655,7 +655,8 @@ a:active {
   }
 
   #message p {
-    width: 90%;
+    width: 80%;
+    font-size: 15px;
     margin: 20px;
   }
 
