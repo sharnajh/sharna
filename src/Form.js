@@ -270,6 +270,4 @@ class Form extends Component {
   }
 }
 
-//i
-
 export default Form;
