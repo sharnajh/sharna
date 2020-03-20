@@ -510,6 +510,7 @@ a:active {
   align-items: center;
   font-family: Futura;
   font-size: 23px;
+  transition: 0.75s;
 }
 
 #v {
@@ -560,20 +561,22 @@ a:active {
   z-index: 1;
 }
 
-#navbar li:before {
+#navbar li:after {
   content: "";
   position: absolute;
   width: 0%;
   height: 3px;
   background-color: #ff1a82;
   bottom: -13px;
-  left: 0px;
+  left: 50%;
   z-index: -1;
-  transition: 0.25s linear;
+  transition: 0.1s linear;
+  vertical-align: center;
 }
 
-#navbar li:hover:before {
+#navbar li:hover:after {
   transition: 0.35s;
+  left: 0;
   width: 100%;
 }
 

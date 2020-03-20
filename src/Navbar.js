@@ -7,20 +7,25 @@ import SocialMediaIcons from "./SocialMediaIcons";
 
 class Navbar extends Component {
   state = {
-    toggle: false
+    toggleMobile: false,
+    toggleWeb: true,
+    scrollPos: 0
+  };
+  handleScroll = () => {
+    const { scrollPos } = this.state;
+    const currentPos = window.pageYOffset;
+    this.setState({ scrollPos: currentPos, toggleWeb: scrollPos > currentPos });
   };
   componentDidMount() {
-    anime({
-      targets: "#navbar",
-      translateY: [-80, 0],
-      duration: 800,
-      easing: "linear"
-    });
+      window.addEventListener("scroll", this.handleScroll);
   }
-  toggle = () => {
-    const { toggle } = this.state;
-    this.setState({ toggle: !toggle }, () => {
-      if (toggle === false) {
+  componentWillUnmount() {
+      window.removeEventListener("scroll", this.handleScroll);
+  }
+  toggleMobile = () => {
+    const { toggleMobile } = this.state;
+    this.setState({ toggleMobile: !toggleMobile }, () => {
+      if (toggleMobile === false) {
         anime({
           targets: "#sm",
           translateY: [-500, 0],
@@ -31,10 +36,17 @@ class Navbar extends Component {
     });
   };
   render() {
-    const { toggle } = this.state;
+    const { toggleMobile, toggleWeb, scrollPos } = this.state;
     return (
       <div>
-        <div id="navbar">
+        <div
+          id="navbar"
+          style={{
+            top: document.clientWidth > 600 && (toggleWeb ? "0" : "-80px"),
+            boxShadow:
+              (scrollPos === 0 && toggleMobile === false) && "none"
+          }}
+        >
           <a href="https://www.sharna.dev">
             <div id="logo-nav">
               <svg
@@ -57,7 +69,7 @@ class Navbar extends Component {
             </div>
           </a>
           {document.body.clientWidth < 600 ? (
-            <MdMenu size={30} id="v" onClick={this.toggle} />
+            <MdMenu size={30} id="v" onClick={this.toggleMobile} />
           ) : (
             <ul>
               <a href="#about">
@@ -83,8 +95,8 @@ class Navbar extends Component {
             </ul>
           )}
         </div>
-        {toggle && (
-          <ul id="sm" onClick={this.toggle}>
+        {toggleMobile && (
+          <ul id="sm" onClick={this.toggleMobile}>
             <a href="#about">
               <li>About</li>
             </a>

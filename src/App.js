@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./assets/CSS/App.css";
 import StarrySky from "./assets/SVGs/StarrySky";
 import FixedInfo from "./FixedInfo";
@@ -19,7 +19,7 @@ const App = () => {
       <About />
       {/* <Portfolio /> */}
       <Contact />
-      {document.body.clientWidth < 600 && <Footer />}
+      <Footer />
     </div>
   );
 };

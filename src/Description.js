@@ -40,15 +40,15 @@ class Description extends Component {
         <ul>
           <li>HTML/(S)CSS</li>
           <li>JavaScript (ES6+)</li>
-          <li>React</li>
+          <li>React.js</li>
+          <li>React Native</li>
           <li>Node.js</li>
           <li>Ruby</li>
           <li>WebGL</li>
-          <li>Three.js</li>
-          <li>Anime.js</li>
           <li>SVGs</li>
-          <li>Blender</li>
+          <li>Blender 3D</li>
           <li>Adobe Illustrator</li>
+          <li>Adobe After Effects</li>
         </ul>
       </div>
     );
