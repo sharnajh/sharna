@@ -42,7 +42,7 @@ class Navbar extends Component {
         <div
           id="navbar"
           style={{
-            top: document.clientWidth > 600 && (toggleWeb ? "0" : "-80px"),
+            top: toggleWeb || document.body.clientWidth < 600 ? "0" : "-80px",
             boxShadow:
               (scrollPos === 0 && toggleMobile === false) && "none"
           }}
