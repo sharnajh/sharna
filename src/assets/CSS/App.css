@@ -238,6 +238,10 @@ a:visited {
   height: 100vh;
 }
 
+#message h1 {
+  margin-bottom: 5px;
+}
+
 #message h2 {
   font-family: Futura;
   font-size: 30px;
@@ -372,15 +376,6 @@ a:active {
   position: relative;
 }
 
-#message h1 {
-  margin-bottom: 0;
-}
-
-#message h1:before {
-  width: 0%;
-  opacity: 0;
-}
-
 #clipboardwrapper {
   font-size: 15px;
   margin-top: 30px;
@@ -500,6 +495,7 @@ a:active {
 #navbar {
   padding: 10px;
   width: 100%;
+  height: 35px;
   position: fixed;
   top: 0;
   background: linear-gradient(to right, #830095 0%, #160071 100%);
@@ -519,9 +515,6 @@ a:active {
 }
 
 #sm {
-  position: fixed;
-  z-index: 4000;
-  top: 50px;
   background: linear-gradient(to right, #830095 0%, #160071 100%);
   box-shadow: 0 4px 15px -12px black;
   font-family: Futura;
@@ -531,20 +524,26 @@ a:active {
 }
 
 #sm li {
-  width: 100vw;
   text-align: center;
   font-weight: 200;
   margin: 0;
   padding: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
   border-bottom: 1px solid #830095;
+  height: 20px;
+  position: relative;
+}
+
+#navbar a:link, #navbar a:active, #navbar a:visited {
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
 }
 
 
 #navbar ul {
   margin: 0;
   margin-right: 50px;
+  margin-top: -5px;
   list-style-type: none;
 }
 
@@ -567,7 +566,7 @@ a:active {
   width: 0%;
   height: 3px;
   background-color: #ff1a82;
-  bottom: -13px;
+  bottom: -17px;
   left: 50%;
   z-index: -1;
   transition: 0.1s linear;
@@ -581,7 +580,7 @@ a:active {
 }
 
 #logo-nav {
-  margin-left: 43px;
+  margin-left: 45px;
   transition: 0.25s;
   height: 100%;
   width: 40px;
