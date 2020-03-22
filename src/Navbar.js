@@ -7,7 +7,7 @@ import SocialMediaIcons from "./SocialMediaIcons";
 
 class Navbar extends Component {
   state = {
-    toggleMobile: true,
+    toggleMobile: false,
     toggleWeb: true,
     scrollPos: 0
   };
@@ -42,6 +42,7 @@ class Navbar extends Component {
         <div
           id="navbar"
           style={{
+            background: scrollPos === 0 && "transparent",
             top: toggleWeb || document.body.clientWidth < 600 ? "0" : "-80px",
             boxShadow:
               (scrollPos === 0 && toggleMobile === false) && "none"
