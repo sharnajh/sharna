@@ -7,7 +7,7 @@ import SocialMediaIcons from "./SocialMediaIcons";
 
 class Navbar extends Component {
   state = {
-    toggleMobile: false,
+    toggleMobile: true,
     toggleWeb: true,
     scrollPos: 0
   };

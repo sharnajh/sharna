@@ -521,22 +521,15 @@ a:active {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  position: relative;
+  top: 50px;
 }
 
 #sm li {
   text-align: center;
   font-weight: 200;
-  margin: 0;
-  padding: 0;
   border-bottom: 1px solid #830095;
-  height: 20px;
-  position: relative;
-}
-
-#navbar a:link, #navbar a:active, #navbar a:visited {
-  padding: 0;
-  margin: 0;
-  display: inline-flex;
+  padding: 20px;
 }
 
 
@@ -566,7 +559,7 @@ a:active {
   width: 0%;
   height: 3px;
   background-color: #ff1a82;
-  bottom: -17px;
+  bottom: -17.9px;
   left: 50%;
   z-index: -1;
   transition: 0.1s linear;
@@ -681,6 +674,10 @@ a:active {
 
   #navbar ul {
     margin: 0;
+  }
+
+  #navbar ul li {
+    padding: 15px;
   }
 
   #logo-nav {
