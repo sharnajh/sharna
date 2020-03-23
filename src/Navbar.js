@@ -3,8 +3,6 @@ import anime from "animejs/lib/anime.es.js";
 import { MdMenu } from "react-icons/md";
 import SocialMediaIcons from "./SocialMediaIcons";
 
-// DRY CODE
-
 class Navbar extends Component {
   state = {
     toggleMobile: false,
@@ -14,7 +12,10 @@ class Navbar extends Component {
   handleScroll = () => {
     const { scrollPos } = this.state;
     const currentPos = window.pageYOffset;
-    this.setState({ scrollPos: currentPos, toggleWeb: scrollPos > currentPos });
+    if (currentPos >= 200) {
+      this.setState({ toggleWeb: scrollPos > currentPos });
+    } 
+    this.setState({ scrollPos: currentPos });
   };
   componentDidMount() {
       window.addEventListener("scroll", this.handleScroll);
