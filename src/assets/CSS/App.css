@@ -514,6 +514,26 @@ a:active {
   cursor: pointer;
 }
 
+#burger {
+  width: 30px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.layer {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  display: block;
+  transform-origin: left;
+  margin: 2.5px;
+}
+
 #sm {
   background: linear-gradient(to right, #830095 0%, #160071 100%);
   box-shadow: 0 4px 15px -12px black;
@@ -521,6 +541,8 @@ a:active {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   width: 100vw;
   z-index: 4000;
@@ -532,6 +554,7 @@ a:active {
   font-weight: 200;
   border-bottom: 1px solid #830095;
   padding: 20px;
+  flex-grow: 1;
 }
 
 

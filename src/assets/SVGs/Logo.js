@@ -53,7 +53,7 @@ class Logo extends Component {
           fill: "#FF1A82",
           stroke: "#FF1A82",
           easing: "linear",
-          duration: 1000
+          duration: 600
         },
         2000
       )
@@ -63,7 +63,7 @@ class Logo extends Component {
           fill: "#00B7FF",
           stroke: "#FF1A82",
           easing: "linear",
-          duration: 1000
+          duration: 600
         },
         2000
       );

@@ -28,11 +28,62 @@ class Navbar extends Component {
     this.setState({ toggleMobile: !toggleMobile }, () => {
       if (toggleMobile === false) {
         anime({
+          targets: "#burger .layer",
+          backgroundColor: "#ff1a82",
+          duration: 400,
+          easing: "linear"
+        });
+        anime({
+          targets: ".layer-top",
+          rotate: "33deg",
+          duration: 400,
+          easing: "linear"
+        })
+        anime({ 
+          targets: ".layer-middle",
+          opacity: [1,0],
+          translateX: -30,
+          duration: 300,
+          easing: "linear"
+        })
+        anime({
+          targets: ".layer-bottom",
+          rotate: "-35deg",
+          duration: 400,
+          easing: "linear"
+        })
+        anime({
           targets: "#sm",
           translateY: [-500, 0],
           duration: 400,
           easing: "linear"
         });
+      } else if (toggleMobile) {
+        anime({
+          targets: "#burger .layer",
+          backgroundColor: "#fff"
+        })
+        anime({
+          targets: ".layer-top",
+          
+          rotate: "0deg",
+          duration: 400,
+          easing: "linear"
+        })
+        anime({
+          targets: ".layer-bottom",
+          
+          rotate: "0deg",
+          duration: 400,
+          easing: "linear"
+        })
+        anime({ 
+          targets: ".layer-middle",
+          opacity: [0,1],
+          translateX: 0,
+          duration: 400,
+          easing: "linear"
+        })
       }
     });
   };
@@ -71,7 +122,12 @@ class Navbar extends Component {
             </div>
           </a>
           {document.body.clientWidth < 600 ? (
-            <MdMenu size={30} id="v" onClick={this.toggleMobile} />
+            // <MdMenu size={30} id="v" onClick={this.toggleMobile} />
+            <div id="burger" onClick={this.toggleMobile}>
+              <div className="layer layer-top" />
+              <div className="layer layer-middle" />
+              <div className="layer layer-bottom" />
+            </div>
           ) : (
             <ul>
               <a href="#about">
