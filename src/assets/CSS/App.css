@@ -528,7 +528,7 @@ a:active {
   height: 3px;
   width: 100%;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   display: block;
   transform-origin: left;
   margin: 2.5px;

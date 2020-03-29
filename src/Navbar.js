@@ -35,7 +35,8 @@ class Navbar extends Component {
         });
         anime({
           targets: ".layer-top",
-          rotate: "33deg",
+          rotate: "43deg",
+          translateY: "-3px",
           duration: 400,
           easing: "linear"
         })
@@ -48,7 +49,8 @@ class Navbar extends Component {
         })
         anime({
           targets: ".layer-bottom",
-          rotate: "-35deg",
+          rotate: "-43deg",
+          translateY: "3px",
           duration: 400,
           easing: "linear"
         })
@@ -65,14 +67,14 @@ class Navbar extends Component {
         })
         anime({
           targets: ".layer-top",
-          
+          translateY: 0,
           rotate: "0deg",
           duration: 400,
           easing: "linear"
         })
         anime({
           targets: ".layer-bottom",
-          
+          translateY: 0,
           rotate: "0deg",
           duration: 400,
           easing: "linear"
