@@ -522,6 +522,7 @@ a:active {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  margin-right: 2px;
 }
 
 .layer {
