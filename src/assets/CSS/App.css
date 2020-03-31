@@ -2,8 +2,7 @@
 
 body {
   background: linear-gradient(to right, #830095 0%, #160071 100%);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Futura, sans-serif;
   color: white;
   margin: 0;
 }
@@ -521,6 +520,7 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-end;
   position: relative;
   margin-right: 2px;
 }
@@ -533,6 +533,10 @@ a:active {
   display: block;
   transform-origin: left;
   margin: 2.5px;
+}
+
+.layer-bottom {
+  width: 50%;
 }
 
 #sm {

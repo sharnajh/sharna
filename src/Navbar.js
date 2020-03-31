@@ -49,6 +49,7 @@ class Navbar extends Component {
         })
         anime({
           targets: ".layer-bottom",
+          width: "100%",
           rotate: "-43deg",
           translateY: "3px",
           duration: 400,
@@ -74,6 +75,7 @@ class Navbar extends Component {
         })
         anime({
           targets: ".layer-bottom",
+          width: "50%",
           translateY: 0,
           rotate: "0deg",
           duration: 400,
