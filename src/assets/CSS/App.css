@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
+@font-face {
+  font-family: Futura;
+  src: url('../fonts/futura/futura_urw_medium.woff2') format('woff2'),
+       url('../fonts/futura/futura_urw_medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   background: linear-gradient(to right, #830095 0%, #160071 100%);
   font-family: Futura, sans-serif;
   color: white;
   margin: 0;
+  overflow-x: hidden;
 }
 
 html {
