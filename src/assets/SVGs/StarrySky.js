@@ -35,7 +35,7 @@ class StarrySky extends Component {
   };
   starryNight = () => {
     anime({
-      targets: ["#sky .star"],
+      targets: [".sky .star"],
       opacity: [
         {
           duration: 700,
