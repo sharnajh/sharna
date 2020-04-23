@@ -58,7 +58,7 @@ class StarrySky extends Component {
     return (
       <div id="skywrapper">
         <ShootingStars />
-        <svg id="sky">{this.paintstars()}</svg>
+        <svg className="sky">{this.paintstars()}</svg>
       </div>
     );
   }

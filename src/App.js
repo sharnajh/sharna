@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./assets/CSS/App.css";
 import StarrySky from "./assets/SVGs/StarrySky";
 import FixedInfo from "./FixedInfo";
