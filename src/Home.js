@@ -3,17 +3,17 @@ import Logo from "./assets/SVGs/Logo.js";
 import Fade from "./hooks/Fade";
 
 const Home = () => {
-  const [showScrollAction, toggleScrollAction] = useState(true)
+  const [showScrollAction, toggleScrollAction] = useState(true);
   const handleScroll = () => {
     if (window.pageYOffset <= 100) {
-      toggleScrollAction(true)
+      toggleScrollAction(true);
     } else {
-      toggleScrollAction(false)
+      toggleScrollAction(false);
     }
-  }
+  };
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-  })
+    window.addEventListener("scroll", handleScroll);
+  });
   return (
     <div className="section" id="main">
       <div id="logowrapper">
@@ -24,10 +24,11 @@ const Home = () => {
         Hi, I'm <span style={{ color: "#FF1A77" }}>Sharna</span>
       </h1>
       <h1 style={{ fontSize: "23px" }}>I'm a Web Developer</h1>
-      <Fade show={showScrollAction}>Scroll</Fade>
+      <Fade className="scroll-action" show={showScrollAction}>
+        Scroll
+      </Fade>
     </div>
   );
 };
-
 
 export default Home;

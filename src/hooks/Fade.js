@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from "react";
+import gsap from "gsap";
 
-const Fade = ({ children, show }) => {
-  const [shouldRender, setRender] = useState(show);
+const Fade = ({ children, show, className }) => {
   useEffect(() => {
-    if (show) setRender(true);
-  }, [show]);
-  console.log(show)
+    if (show) {
+      gsap.to(".fade", {
+        duration: 0.5,
+        opacity: 1,
+        ease: "linear"
+      });
+    } else {
+      gsap.to(".fade", {
+        duration: 0.5,
+        opacity: 0,
+        ease: "linear"
+      });
+    }
+  });
   return (
-    <span
-      className="scroll-action"
-      style={{ animation: `${show ? "fadeIn" : "fadeOut"} 1s` }}
-    >
+    <span className={className + " fade"} style={{ opacity: "0 !important" }}>
       {children}
     </span>
   );
