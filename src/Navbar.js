@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import anime from "animejs/lib/anime.es.js";
-import { MdMenu } from "react-icons/md";
 import SocialMediaIcons from "./SocialMediaIcons";
 
 class Navbar extends Component {
