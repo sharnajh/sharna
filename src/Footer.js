@@ -9,7 +9,7 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <GoRepoForked size={12} /> Coded & Designed by Sharna
+        <GoRepoForked size={11} /> Coded & Designed by Sharna
       </a>
     </div>
   );
