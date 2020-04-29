@@ -41,9 +41,9 @@ class Description extends Component {
           <li>HTML/(S)CSS</li>
           <li>JavaScript (ES6+)</li>
           <li>React.js</li>
-          <li>React Native</li>
+          <li>Firebase</li>
           <li>Node.js</li>
-          <li>Ruby</li>
+          <li>Redux</li>
           <li>WebGL</li>
           <li>SVGs</li>
           <li>Blender 3D</li>
