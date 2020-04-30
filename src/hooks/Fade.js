@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
 
 const Fade = ({ children, show, className }) => {

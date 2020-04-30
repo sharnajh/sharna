@@ -108,7 +108,8 @@ a:visited {
 
 #main h1 {
   font-family: "Roboto Condensed", Futura, sans-serif;
-  font-weight: 200;
+  font-style: italic;
+  font-weight: 700;
   color: white;
   margin: 5px;
   font-size: 30px;
@@ -176,7 +177,8 @@ a:visited {
 #projects h1,
 #message h1 {
   font-family: "Roboto Condensed", Futura, sans-serif;
-  font-weight: 50;
+  font-style: italic;
+  font-weight: 700;
   text-align: left;
   margin-bottom: 25px;
   color: white;
