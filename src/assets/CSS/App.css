@@ -98,7 +98,6 @@ a:visited {
 }
 
 #main {
-  z-index: 1000;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -296,6 +295,10 @@ a:active {
 
 :focus {
   outline: none;
+}
+
+#info {
+  z-index: 900000000000;
 }
 
 #email {

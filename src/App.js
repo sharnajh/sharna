@@ -14,12 +14,12 @@ const App = () => {
     <div>
       <Navbar />
       <StarrySky />
-      {document.body.clientWidth > 600 && <FixedInfo />}
       <Home />
       <About />
       {/* <Portfolio /> */}
       <Contact />
       <Footer />
+      {document.body.clientWidth > 600 && <FixedInfo />}
     </div>
   );
 };
