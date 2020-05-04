@@ -13,7 +13,7 @@ class Astronaut extends Component {
     loading: false,
   }
   renderModel = () => {
-    const { dispatch } = this.props;
+    const { MODELLoaded } = this.props;
     // Scene
     let scene = new THREE.Scene();
     let camera = new THREE.PerspectiveCamera(75, 500 / 500, 0.2, 1000);
@@ -65,7 +65,7 @@ class Astronaut extends Component {
       // Here the loaded data is assumed to be an object
       gltf => {
         // Update state
-        dispatch(MODELLoaded());
+        MODELLoaded();
         this.setState({ loading: false })
         // Add the loaded object to the scene
         let model = gltf.scene;
@@ -109,10 +109,8 @@ class Astronaut extends Component {
   }
 }
 
-function mapStateToProps({ loaded }) {
-  return {
-    loaded
-  };
-}
+const mapDispatchToProps = (dispatch) => ({
+  MODELLoaded: () => dispatch(MODELLoaded())
+})
 
-export default connect(mapStateToProps)(Astronaut);
+export default connect(null, mapDispatchToProps)(Astronaut);
