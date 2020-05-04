@@ -1,38 +1,32 @@
-import React, { Component } from "react";
+import React, { } from "react";
 import anime from "animejs/lib/anime.es.js";
 import { connect } from "react-redux";
 
 // Technically this isn't an SVG.
 
-class ShootingStars extends Component {
-  state = {
-    num: 60,
-    vw: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-    vh: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+const ShootingStars = ({ loaded }) => {
+  const num = 15;
+  const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  const getRandomX = () => {
+    return Math.floor(Math.random() * Math.floor(vw)).toString();
   };
-  randomRadius = () => {
-    return Math.random() * 0.7 + 0.6;
+  const getRandomY = () => {
+    return Math.floor(Math.random() * Math.floor(vh)).toString();
   };
-  getRandomX = () => {
-    return Math.floor(Math.random() * Math.floor(this.state.vw)).toString();
-  };
-  getRandomY = () => {
-    return Math.floor(Math.random() * Math.floor(this.state.vh)).toString();
-  };
-  paintshooters = () => {
-    const { num } = this.state;
+  const paintshooters = () => {
     return [...Array(num)].map((x, y) => (
       <div
         key={y}
         className="wish"
         style={{
-          left: `${this.getRandomY()}px`,
-          top: `${this.getRandomX()}px`
+          left: `${getRandomY()}px`,
+          top: `${getRandomX()}px`
         }}
       />
     ));
   };
-  shootingStars = () => {
+  const shootingStars = () => {
     anime({
       targets: ["#shootingstars .wish"],
       easing: "linear",
@@ -55,18 +49,16 @@ class ShootingStars extends Component {
       translateX: 350
     });
   };
-  render() {
-    const { loaded } = this.props;
-    if (this.state.vw > 600) {
-      if (loaded.model) {
-        this.shootingStars();
-      }
-    } else {
-      this.shootingStars();
+  if (vw > 600) {
+    if (loaded.model) {
+      shootingStars();
     }
-    return <div id="shootingstars">{this.paintshooters()}</div>;
+  } else {
+    shootingStars();
   }
+  return <div id="shootingstars">{paintshooters()}</div>;
 }
+
 
 function mapStateToProps({ loaded }) {
   return {
