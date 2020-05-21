@@ -49,9 +49,6 @@ class Astronaut extends Component {
 
     // Models
     let manager = new THREE.LoadingManager();
-    // manager.onProgress = function(item, loaded, total) {
-    //   console.log(item, loaded, total);
-    // };
     const loader = new GLTFLoader(manager);
     let dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath("three/examples/js/libs/draco");
