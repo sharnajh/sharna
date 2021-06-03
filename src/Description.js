@@ -45,7 +45,6 @@ class Description extends Component {
         </p>
         <h2>Technologies I love</h2>
         <ul>
-          <li>HTML/(S)CSS</li>
           <li>JavaScript (ES6+)</li>
           <li>C++</li>
           <li>React.js</li>
