@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Description from "./Description";
 // import Astronaut from "./assets/models/Astronaut";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 // import Loading from "./assets/SVGs/Loading";
 
 class About extends Component {

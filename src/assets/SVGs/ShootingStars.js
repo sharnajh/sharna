@@ -1,10 +1,10 @@
 import React, { } from "react";
 import anime from "animejs/lib/anime.es.js";
-import { connect } from "react-redux";
+//import { connect } from "react-redux";
 
 // Technically this isn't an SVG.
 
-const ShootingStars = ({ loaded }) => {
+const ShootingStars = () => {
   const num = 15;
   const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -49,21 +49,15 @@ const ShootingStars = ({ loaded }) => {
       translateX: 350
     });
   };
-  if (vw > 600) {
-    if (loaded.model) {
-      shootingStars();
-    }
-  } else {
-    shootingStars();
-  }
+  shootingStars();
   return <div id="shootingstars">{paintshooters()}</div>;
 }
 
 
-function mapStateToProps({ loaded }) {
-  return {
-    loaded
-  };
-}
+// function mapStateToProps({ loaded }) {
+//   return {
+//     loaded
+//   };
+// }
 
-export default connect(mapStateToProps)(ShootingStars);
+export default (ShootingStars);
