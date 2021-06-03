@@ -7,13 +7,11 @@ export default function loaded(state = { logo: false, model: false }, action) {
         ...state,
         logo: true
       };
-      break;
     case MODEL_LOADED:
       return {
         ...state,
         model: true
       };
-      break;
     default:
       return state;
   }
