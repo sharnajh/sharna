@@ -133,7 +133,7 @@ class Navbar extends Component {
             </div>
           ) : (
             <ul>
-              <a href="#about">
+              <a href="#bio">
                 <li>About</li>
               </a>
               <a
