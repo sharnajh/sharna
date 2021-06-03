@@ -10,7 +10,7 @@ class About extends Component {
       <div className="section" id="about">
         <div id="bio">
           <Description />
-          {document.body.clientWidth < 600 ? (
+          {/* {document.body.clientWidth < 600 ? (
             ""
           ) : this.props.loaded.logo ? (
             <Astronaut />
@@ -18,7 +18,7 @@ class About extends Component {
             <div id="astronautwrapper">
               <Loading />
             </div>
-          )}
+          )} */}
         </div>
       </div>
     );

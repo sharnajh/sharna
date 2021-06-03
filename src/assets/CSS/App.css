@@ -130,7 +130,6 @@ a:visited {
   transition: 0.5s ease;
 }
 
-#bio,
 #projects,
 #message {
   display: flex;
@@ -139,6 +138,14 @@ a:visited {
   align-items: center;
   margin: 0;
   height: 100vh;
+}
+
+#bio {
+  display: flex;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  height: 70vw;
 }
 
 .desc p {
@@ -318,7 +325,7 @@ a:active {
 #email {
   position: fixed;
   padding: 10px;
-  bottom: 30%;
+  bottom: 50%;
   right: -40px;
   letter-spacing: 0.3ch;
   font-weight: 200;
@@ -338,7 +345,7 @@ a:active {
 
 #socialmedia {
   position: fixed;
-  bottom: 30%;
+  bottom: 50%;
   left: -60px;
   letter-spacing: 0.3ch;
   font-weight: 200;
@@ -366,6 +373,10 @@ a:active {
   color: white;
   cursor: pointer;
   display: inline-block;
+}
+
+#contact {
+  height: 80vh;
 }
 
 #message {

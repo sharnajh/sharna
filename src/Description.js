@@ -10,7 +10,7 @@ class Description extends Component {
           <br />I thrive at the juncture between science and art, and build
           things for the web that are both beautifully designed and efficiently
           coded. <br />
-          I'm an inquisitive, ambitious, and passionate coder currently seeking{" "}
+          I'm an inquisitive, ambitious, and passionate coder seeking{" "}
           <a href="#contact">
             <span>new opportunities</span>
           </a>{" "}
@@ -40,13 +40,12 @@ class Description extends Component {
         <ul>
           <li>HTML/(S)CSS</li>
           <li>JavaScript (ES6+)</li>
+          <li>C++</li>
           <li>React.js</li>
           <li>Firebase</li>
           <li>Node.js</li>
           <li>Redux</li>
-          <li>WebGL</li>
           <li>SVGs</li>
-          <li>Blender 3D</li>
           <li>Adobe Illustrator</li>
           <li>Adobe After Effects</li>
         </ul>
