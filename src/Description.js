@@ -4,7 +4,7 @@ class Description extends Component {
   render() {
     return (
       <div className="desc">
-        <h1>About me</h1>
+        <h1 style={{ textAlign = "center" }}>About me</h1>
         <p>
           Hi there! My name is Sharna Hossain. I’m a web developer based in NYC.{" "}
           <br />I thrive at the juncture between science and art, and build
