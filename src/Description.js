@@ -34,7 +34,14 @@ class Description extends Component {
           >
             Udacity
           </a>
-          .{" "}
+          .{" "}<br />
+          In 2021, I earned <a
+            href="https://www.credential.net/ef0243e9-2c7f-4d2f-a355-8eb3c85e82a2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The Unity Immersive Design Certificate
+          </a> from NYU.
         </p>
         <h2>Technologies I love</h2>
         <ul>
@@ -44,8 +51,8 @@ class Description extends Component {
           <li>React.js</li>
           <li>Firebase</li>
           <li>Node.js</li>
-          <li>Redux</li>
-          <li>SVGs</li>
+          <li>Unity</li>
+          <li>Unreal Engine</li>
           <li>Adobe Illustrator</li>
           <li>Adobe After Effects</li>
         </ul>
