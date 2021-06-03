@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Description from "./Description";
-import Astronaut from "./assets/models/Astronaut";
+// import Astronaut from "./assets/models/Astronaut";
 import { connect } from "react-redux";
-import Loading from "./assets/SVGs/Loading";
+// import Loading from "./assets/SVGs/Loading";
 
 class About extends Component {
   render() {
@@ -25,10 +25,10 @@ class About extends Component {
   }
 }
 
-function mapStateToProps({ loaded }) {
-  return {
-    loaded
-  };
-}
+// function mapStateToProps({ loaded }) {
+//   return {
+//     loaded
+//   };
+// }
 
-export default connect(mapStateToProps)(About);
+export default (About);
