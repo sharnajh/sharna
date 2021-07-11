@@ -17,7 +17,7 @@ const App = () => {
       <Home />
       <About />
       {/* <Portfolio /> */}
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
       {document.body.clientWidth > 600 && <FixedInfo />}
     </div>
