@@ -143,9 +143,9 @@ class Navbar extends Component {
               >
                 <li>Projects</li>
               </a>
-              <a href="#contact">
+              {/* <a href="#contact">
                 <li>Contact</li>
-              </a>
+              </a> */}
               <a
                 href="https://sharna.dev/resume.pdf"
                 target="_blank"
@@ -168,9 +168,9 @@ class Navbar extends Component {
             >
               <li>Projects</li>
             </a>
-            <a href="#contact">
+            {/* <a href="#contact">
               <li>Contact</li>
-            </a>
+            </a> */}
             <a
               href="https://sharna.dev/resume.pdf"
               target="_blank"
