@@ -5,8 +5,8 @@ import FixedInfo from "./FixedInfo";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import About from "./About";
-//import Portfolio from "./Portfolio";
-// import Contact from "./Contact";
+import Portfolio from "./Portfolio";
+import Contact from "./Contact";
 import Footer from "./Footer";
 
 const App = () => {
@@ -16,8 +16,8 @@ const App = () => {
       <StarrySky />
       <Home />
       <About />
-      {/* <Portfolio /> */}
-      {/* <Contact /> */}
+      <Portfolio />
+      <Contact />
       <Footer />
       {document.body.clientWidth > 600 && <FixedInfo />}
     </div>

@@ -1,0 +1,10 @@
+#projects {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-auto-rows: auto; 
+    gap: 10px;
+}
+
+#portfolio {
+    height: 100vh;
+}

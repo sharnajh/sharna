@@ -50,19 +50,20 @@ class Form extends Component {
     }
   };
   sendFeedback(template_id, variables) {
-    window.emailjs
-      .send("gmail", template_id, variables)
-      .then(res => {
-        console.log("Email successfully sent!");
-        this.setState({ success: true });
-      })
-      .catch(err => {
-        console.error(
-          "Oh well, you failed. Here some thoughts on the error that occured:",
-          err
-        );
-        this.setState({ failure: true });
-      });
+    this.setState({ success: true });
+    // window.emailjs
+    //   .send("gmail", template_id, variables)
+    //   .then(res => {
+    //     console.log("Email successfully sent!");
+    //     this.setState({ success: true });
+    //   })
+    //   .catch(err => {
+    //     console.error(
+    //       "Oh well, you failed. Here some thoughts on the error that occured:",
+    //       err
+    //     );
+    //     this.setState({ failure: true });
+    //   });
   }
 
   timeline = () => {

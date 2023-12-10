@@ -130,7 +130,6 @@ a:visited {
   transition: 0.5s ease;
 }
 
-#projects,
 #message {
   display: flex;
   width: 80vw;

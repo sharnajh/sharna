@@ -1,0 +1,18 @@
+.card {
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    /* Adjust the blur radius as needed */
+    /* Optional: Additional properties for browser compatibility */
+    -webkit-backdrop-filter: blur(2px);
+    /* For Safari */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Background color with opacity */
+}
+
+
+.card img {
+    width: inherit;
+    margin: 10px;
+}
