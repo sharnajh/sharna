@@ -1,5 +1,5 @@
 .card {
-    padding: 10px;
+    padding: 1.5em;
     border-radius: 10px;
     backdrop-filter: blur(2px);
     /* Adjust the blur radius as needed */
