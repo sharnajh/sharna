@@ -10,8 +10,8 @@ const projects = [
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
   {
-    title: "Project 2",
-    description: "lorem ipsum",
+    title: "YearUp Mock Site",
+    description: "Educational program site",
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
   {
