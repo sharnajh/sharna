@@ -4,8 +4,9 @@ import Card from "./Card";
 
 const projects = [
   {
-    title: "Project 1",
-    description: "lorem ipsum",
+    title: "Kuro Retail",
+    description: "Mock e-commerce site",
+    URL: "https://kuro-retail.netlify.app/",
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
   {
@@ -36,6 +37,7 @@ class Portfolio extends Component {
               title={project.title}
               description={project.description}
               imgUrl={project.imgUrl}
+              URL={project.URL}
             />
           ))}
         </div>
