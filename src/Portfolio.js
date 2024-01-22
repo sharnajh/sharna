@@ -5,8 +5,7 @@ import Card from "./Card";
 const projects = [
   {
     title: "Digigram",
-    description: "Fullstack social media app,  \
-    built with Spring Boot, React.js, MySQL, and hosted on AWS.",
+    description: "Fullstack social media app, built with Spring Boot, React.js, MySQL, and hosted on AWS.",
     URL: "https://github.com/sharnajh/capstone_backend",
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
