@@ -4,24 +4,22 @@ import Card from "./Card";
 
 const projects = [
   {
+    title: "Digigram",
+    description: "Fullstack social media app,  \
+    built with Spring Boot, React.js, MySQL, and hosted on AWS.",
+    URL: "https://github.com/sharnajh/capstone_backend",
+    imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+  },
+  {
     title: "Kuro Retail",
-    description: "Mock e-commerce site",
+    description: "Mock e-commerce site built with React.js",
     URL: "https://kuro-retail.netlify.app/",
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
   {
     title: "YearUp Mock Site",
     description: "Educational program site",
-    imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-  },
-  {
-    title: "Project 3",
-    description: "lorem ipsum",
-    imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-  },
-  {
-    title: "Project 4",
-    description: "lorem ipsum",
+    URL: "",
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
 ]
