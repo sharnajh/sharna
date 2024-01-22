@@ -12,14 +12,14 @@ const projects = [
   },
   {
     title: "Kuro Retail",
-    description: "Mock e-commerce site built with React.js",
+    description: "Online urban retail store. Built with React, Redux, Reselect, React Router, Firebase, Stripe, and more.",
     URL: "https://kuro-retail.netlify.app/",
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
   {
     title: "YearUp Mock Site",
-    description: "Educational program site",
-    URL: "",
+    description: "Educational program site built with pure HTML/CSS",
+    URL: "https://clever-monstera-3ac05a.netlify.app/",
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
 ]
