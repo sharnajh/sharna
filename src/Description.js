@@ -22,10 +22,12 @@ class Description extends Component {
         <ul>
           <li>JavaScript (ES6+)</li>
           <li>React.js</li>
-          <li>Node.js</li>
           <li>Java</li>
+          <li>Swing</li>
+          <li>Node.js</li>
           <li>Python</li>
-          <li>Unity</li>
+          <li>AWS</li>
+          <li>SQL</li>
         </ul>
       </div>
     );
