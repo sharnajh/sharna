@@ -28,6 +28,7 @@ class Portfolio extends Component {
     return (
       <div className="section" id="portfolio">
         <h1>Portfolio</h1>
+        <hr style={{ width: "500px", marginTop: 0 }} />
         <div id="projects">
           {projects.map((project) => (
             <Card

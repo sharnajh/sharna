@@ -7,6 +7,7 @@ const Contact = () => {
     <div className="section" id="contact">
       <div id="message">
         <h1>Let's talk!</h1>
+        <hr style={{ width: "500px" }} />
         <p>
           I am interested in freelance and professional opportunities, however my
           inbox is open for any other kind of collaborations<span style={{ whiteSpace:"nowrap"}}> — or just to say

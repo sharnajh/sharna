@@ -5,6 +5,7 @@ class Description extends Component {
     return (
       <div className="desc">
         <h1 style={{ textAlign: "center" }}>About me</h1>
+        <hr />
         <p>
           Hi there! I'm Sharna, a coding enthusiast with a love for software development.{" "}
           <br />
@@ -19,6 +20,7 @@ class Description extends Component {
           I have an orange tabby cat named Digit 🐈.
         </p>
         <h2>Technologies I love</h2>
+        <hr />
         <ul>
           <li>JavaScript (ES6+)</li>
           <li>React.js</li>

@@ -107,7 +107,6 @@ a:visited {
 
 #main h1 {
   font-family: "Roboto Condensed", Futura, sans-serif;
-  font-style: italic;
   font-weight: 700;
   color: white;
   margin: 5px;
@@ -180,9 +179,9 @@ a:visited {
 #about h1,
 #about h2,
 #projects h1,
-#message h1 {
+#message h1,
+#portfolio h1 {
   font-family: "Roboto Condensed", Futura, sans-serif;
-  font-style: italic;
   font-weight: 700;
   text-align: left;
   margin-bottom: 25px;
@@ -679,6 +678,37 @@ a:active {
   fill: #00b7ff;
   transition: 0.25s;
 }
+
+/* Horizontal Rule Styling */
+
+hr {
+  position: relative;
+  border: none;
+  height: 1px;
+  background-color: white;
+  overflow: visible;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+hr::before, hr::after {
+  content: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLDApIj4NCgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDMxLjgsMjU2Yy02OSw0Mi4yLTEzNy4zLDEyNi45LTE3NS44LDIyNC44QzIxNy41LDM4Mi45LDE0OS4yLDI5OC4yLDgwLjIsMjU2DQoJCWM2OS00Mi4yLDEzNy4zLTEyNi45LDE3NS44LTIyNC44QzI5NC41LDEyOS4xLDM2Mi44LDIxMy44LDQzMS44LDI1NnoiLz4NCjwvZz4NCjwvc3ZnPg0K');
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translateY(-50%);
+}
+
+hr::before {
+  left: -10px;
+}
+
+hr::after {
+  right: -10px;
+}
+
+/* Responsive Styling */
 
 @media only screen and (max-width: 1000px) {
   #contactform {
