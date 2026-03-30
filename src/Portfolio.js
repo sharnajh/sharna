@@ -15,13 +15,13 @@ const projects = [
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
   {
-    title: "Project 3",
-    description: "lorem ipsum",
+    title: "Gemini Constellation",
+    description: "Python turtle project",
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
   {
-    title: "Project 4",
-    description: "lorem ipsum",
+    title: "Bakery Mock Site",
+    description: "Mock restaurant site with pure HTML and CSS.",
     imgUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
   },
 ]
