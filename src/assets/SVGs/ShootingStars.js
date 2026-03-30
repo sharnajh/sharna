@@ -1,20 +1,20 @@
-import React, { } from "react";
+import React, { useEffect } from "react";
 import anime from "animejs/lib/anime.es.js";
-//import { connect } from "react-redux";
-
-// Technically this isn't an SVG.
 
 const ShootingStars = () => {
-  const num = 15;
+  const num = 10;
   const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
   const getRandomX = () => {
     return Math.floor(Math.random() * Math.floor(vw)).toString();
   };
+
   const getRandomY = () => {
-    return Math.floor(Math.random() * Math.floor(vh)).toString();
+    return Math.floor(Math.pow(Math.random(), 1.25) * Math.floor(vh * 0.88)).toString();
   };
-  const paintshooters = () => {
+
+  const paintShooters = () => {
     return [...Array(num)].map((x, y) => (
       <div
         key={y}
@@ -26,38 +26,42 @@ const ShootingStars = () => {
       />
     ));
   };
-  const shootingStars = () => {
-    anime({
-      targets: ["#shootingstars .wish"],
+
+  useEffect(() => {
+    const animation = anime({
+      targets: "#shootingstars .wish",
       easing: "linear",
       loop: true,
-      delay: (el, i) => 3000 * i,
+      delay: (el, i) => 2600 * i,
       opacity: [
         {
-          duration: 700,
+          duration: 380,
           value: "1"
+        },
+        {
+          duration: 820,
+          value: "0"
         }
       ],
       width: [
         {
-          value: "150px"
+          value: "170px",
+          duration: 280
         },
         {
-          value: "0px"
+          value: "0px",
+          duration: 900
         }
       ],
-      translateX: 350
+      translateX: 360
     });
-  };
-  shootingStars();
-  return <div id="shootingstars">{paintshooters()}</div>;
-}
 
+    return () => {
+      animation.pause();
+    };
+  }, []);
 
-// function mapStateToProps({ loaded }) {
-//   return {
-//     loaded
-//   };
-// }
+  return <div id="shootingstars">{paintShooters()}</div>;
+};
 
-export default (ShootingStars);
+export default ShootingStars;

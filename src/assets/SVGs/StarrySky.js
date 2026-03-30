@@ -4,19 +4,39 @@ import ShootingStars from "./ShootingStars"
 
 class StarrySky extends Component {
   state = {
-    num: 60,
+    num: 120,
     vw: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
     vh: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
   };
-  randomRadius = () => {
-    return Math.random() * 0.7 + 0.6;
+
+  componentDidMount() {
+    this.starryNight();
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  handleResize = () => {
+    this.setState({
+      vw: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+      vh: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    });
   };
+
+  randomRadius = () => {
+    return Math.random() * 1.35 + 0.35;
+  };
+
   getRandomX = () => {
     return Math.floor(Math.random() * Math.floor(this.state.vw)).toString();
   };
+
   getRandomY = () => {
     return Math.floor(Math.random() * Math.floor(this.state.vh)).toString();
   };
+
   paintstars = () => {
     const { num } = this.state;
     return [...Array(num)].map((x, y) => (
@@ -28,36 +48,55 @@ class StarrySky extends Component {
         strokeWidth="0"
         fill="white"
         key={y}
-        className="star"
-        opacity="0.7"
+        className={`star star-${y % 2}`}
+        opacity={Math.random() * 0.45 + 0.24}
       />
     ));
   };
+
   starryNight = () => {
     anime({
-      targets: [".sky .star"],
+      targets: [".sky .star-0"],
       opacity: [
         {
-          duration: 700,
-          value: "0"
+          duration: 1200,
+          value: 0.22
         },
         {
-          duration: 700,
-          value: "0.7"
+          duration: 1600,
+          value: 0.78
         }
       ],
-      easing: "linear",
+      easing: "easeInOutSine",
       loop: true,
-      delay: (el, i) => 50 * i
+      delay: (el, i) => 110 * i
+    });
+
+    anime({
+      targets: [".sky .star-1"],
+      opacity: [
+        {
+          duration: 1900,
+          value: 0.14
+        },
+        {
+          duration: 2100,
+          value: 0.58
+        }
+      ],
+      easing: "easeInOutSine",
+      loop: true,
+      delay: (el, i) => 85 * i
     });
   };
-  componentDidMount() {
-    this.starryNight();
-  }
+
   render() {
     return (
       <div id="skywrapper">
         <ShootingStars />
+        <div className="sky-glow sky-glow-left" />
+        <div className="sky-glow sky-glow-right" />
+        <div className="sky-glow sky-glow-center" />
         <svg className="sky">{this.paintstars()}</svg>
       </div>
     );
