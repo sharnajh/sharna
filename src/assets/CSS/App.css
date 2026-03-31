@@ -54,8 +54,13 @@ textarea {
 }
 
 ::selection {
-  color: #08101f;
-  background: var(--blue);
+  color: inherit;
+  background: transparent;
+}
+
+::-moz-selection {
+  color: inherit;
+  background: transparent;
 }
 
 .app-shell {
@@ -74,15 +79,15 @@ textarea {
 .star {
   fill: white;
   transform-origin: center;
-  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.42));
+  filter: none;
 }
 
 .star-0 {
-  filter: drop-shadow(0 0 4px rgba(190, 235, 255, 0.55));
+  filter: drop-shadow(0 0 2px rgba(190, 235, 255, 0.28));
 }
 
 .star-1 {
-  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.38));
+  filter: none;
 }
 
 .sky-glow {
@@ -147,7 +152,7 @@ textarea {
     rgba(115, 217, 255, 0.7) 45%,
     rgba(0, 0, 255, 0)
   );
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.58));
   overflow: hidden;
 }
 
@@ -516,6 +521,7 @@ textarea {
   align-items: center;
   padding: 0.28rem 0.7rem;
   border-radius: 999px;
+  border: 0;
   background: rgba(115, 217, 255, 0.14);
   color: var(--blue);
   font-size: 0.72rem;
@@ -540,6 +546,28 @@ textarea {
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.7;
+}
+
+.experience-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.experience-skill-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.68rem;
+  padding: 0.26rem 0.62rem;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(115, 217, 255, 0.08);
+  color: rgba(115, 217, 255, 0.9);
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
 }
 
 .item-inline-label {
@@ -684,6 +712,17 @@ textarea {
   .timeline-description {
     font-size: 0.9rem;
     line-height: 1.65;
+  }
+
+  .experience-skill-list {
+    gap: 0.55rem;
+    margin-top: 0.85rem;
+  }
+
+  .experience-skill-badge {
+    min-height: 1.56rem;
+    padding: 0.22rem 0.56rem;
+    font-size: 0.72rem;
   }
 
 }

@@ -14,10 +14,10 @@ const ShootingStars = () => {
     return Math.floor(Math.pow(Math.random(), 1.25) * Math.floor(vh * 0.88)).toString();
   };
 
-  const paintShooters = () => {
-    return [...Array(num)].map((x, y) => (
+  const paintShooters = () =>
+    [...Array(num)].map((_, index) => (
       <div
-        key={y}
+        key={index}
         className="wish"
         style={{
           left: `${getRandomY()}px`,
@@ -25,7 +25,6 @@ const ShootingStars = () => {
         }}
       />
     ));
-  };
 
   useEffect(() => {
     const animation = anime({

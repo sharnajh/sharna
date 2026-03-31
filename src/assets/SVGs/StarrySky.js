@@ -8,11 +8,12 @@ class StarrySky extends Component {
   state = {
     num: 120,
     vw: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-    vh: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    vh: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
+    stars: []
   };
 
   componentDidMount() {
-    this.starryNight();
+    this.setState({ stars: this.createStars() }, this.starryNight);
     window.addEventListener("resize", this.handleResize);
   }
 
@@ -28,31 +29,29 @@ class StarrySky extends Component {
     });
   };
 
-  randomRadius = () => {
-    return Math.random() * 1.35 + 0.35;
-  };
-
-  getRandomX = () => {
-    return Math.floor(Math.random() * Math.floor(this.state.vw)).toString();
-  };
-
-  getRandomY = () => {
-    return Math.floor(Math.random() * Math.floor(this.state.vh)).toString();
-  };
+  createStars = () =>
+    [...Array(this.state.num)].map((_, index) => ({
+      id: index,
+      xRatio: Math.random(),
+      yRatio: Math.random(),
+      radius: Math.random() * 1.35 + 0.35,
+      opacity: Math.random() * 0.45 + 0.24,
+      variant: index % 2
+    }));
 
   paintstars = () => {
-    const { num } = this.state;
-    return [...Array(num)].map((x, y) => (
+    const { stars, vw, vh } = this.state;
+    return stars.map((star) => (
       <circle
-        cx={this.getRandomX()}
-        cy={this.getRandomY()}
-        r={this.randomRadius()}
+        cx={Math.round(star.xRatio * vw)}
+        cy={Math.round(star.yRatio * vh)}
+        r={star.radius}
         stroke="none"
         strokeWidth="0"
         fill="white"
-        key={y}
-        className={`star star-${y % 2}`}
-        opacity={Math.random() * 0.45 + 0.24}
+        key={star.id}
+        className={`star star-${star.variant}`}
+        opacity={star.opacity}
       />
     ));
   };
