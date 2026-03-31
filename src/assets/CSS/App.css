@@ -655,10 +655,14 @@ textarea {
   }
 
   .timeline-item h3 {
-    font-size: 1rem;
+    font-size: 1.08rem;
+    line-height: 1.2;
   }
 
-  .item-inline-label,
+  .item-inline-label {
+    font-size: 0.94rem;
+  }
+
   .item-meta,
   .timeline-item p {
     font-size: 0.92rem;
