@@ -451,7 +451,7 @@ textarea {
 }
 
 .timeline-item-compact .timeline-dot {
-  margin-top: 0.4rem;
+  margin-top: 0.34rem;
 }
 
 .timeline-item-featured {
@@ -474,14 +474,26 @@ textarea {
 }
 
 .timeline-dot {
-  width: 0.7rem;
-  height: 0.7rem;
-  margin-top: 0.58rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #8de7ff, #73d9ff);
-  box-shadow: 0 0 0 1px rgba(248, 244, 255, 0.08);
+  width: 0.82rem;
+  height: 0.82rem;
+  margin-top: 0.5rem;
   position: relative;
   z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #7ddfff;
+}
+
+.timeline-sparkle {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 0 4px rgba(125, 223, 255, 0.25));
+}
+
+.timeline-sparkle path {
+  fill: currentColor;
 }
 
 .timeline-heading {

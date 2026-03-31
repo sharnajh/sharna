@@ -120,6 +120,17 @@ const getExperienceMeta = (item) => {
   };
 };
 
+const SparkleBullet = () => (
+  <svg
+    className="timeline-sparkle"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M12 0C13.7 7.2 16.8 10.3 24 12C16.8 13.7 13.7 16.8 12 24C10.3 16.8 7.2 13.7 0 12C7.2 10.3 10.3 7.2 12 0Z" />
+  </svg>
+);
+
 const App = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -188,7 +199,9 @@ const App = () => {
                   key={`${item.title}-${item.company}`}
                   className={`timeline-item${item.featured ? " timeline-item-featured" : ""}`}
                 >
-                  <div className="timeline-dot" />
+                  <div className="timeline-dot">
+                    <SparkleBullet />
+                  </div>
                   <div>
                     <div className="timeline-heading">
                       <h3>{item.title}</h3>
@@ -246,7 +259,9 @@ const App = () => {
             <div className="timeline timeline-education">
               {education.map((item) => (
                 <div key={item.school} className="timeline-item timeline-item-compact">
-                  <div className="timeline-dot" />
+                  <div className="timeline-dot">
+                    <SparkleBullet />
+                  </div>
                   <div>
                     <div className="timeline-heading">
                       <h3>{item.degree}</h3>
