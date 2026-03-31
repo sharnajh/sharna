@@ -42,21 +42,27 @@ const experience = [
     company: "Morgan Stanley",
     start: { month: 8, year: 2024 },
     end: null,
+    description:
+      "Focused on system design, modernization, and end-to-end delivery of distributed systems. Involved in planning architecture, defining service boundaries, and driving systems from design through production, with an emphasis on scalability, reliability, and real-world impact.",
     featured: true,
     current: true
   },
   {
-    title: "Developer",
-    company: "Tech Change Makers x Global Poverty Project",
+    title: "Pro Bono Developer",
+    company: "Global Poverty Research Lab",
     start: { month: 3, year: 2026 },
     end: null,
+    description:
+      "Contributing to the expansion and improvement of global poverty datasets, supporting more equitable and representative research. Part of my role at Morgan Stanley via the Firm's Tech Change Makers program.",
     current: true
   },
   {
-    title: "Software Engineer Apprentice",
+    title: "Software Engineer I",
     company: "Morgan Stanley",
     start: { month: 1, year: 2024 },
-    end: { month: 8, year: 2024 }
+    end: { month: 8, year: 2024 },
+    description:
+      "Built a microservice to replace a Mainframe-dependent settlements flow, enabling real-time processing and modernizing a critical system. Contributed to architecture through ADRs and C4 diagrams and improved data reliability across systems."
   }
 ];
 
@@ -68,6 +74,10 @@ const education = [
   {
     school: "BMCC",
     degree: "Associate of Science in Computer Science"
+  },
+  {
+    school: "New York Code + Design Academy",
+    degree: "Coding Bootcamp"
   }
 ];
 
@@ -160,7 +170,7 @@ const App = () => {
                   rel="noopener noreferrer"
                 >
                   <span className="contact-icon">{link.icon}</span>
-                  {link.label}
+                  <span className="contact-label">{link.label}</span>
                 </a>
               ))}
             </div>
@@ -195,11 +205,19 @@ const App = () => {
                       </span>
                       <span>{getExperienceMeta(item).duration}</span>
                     </p>
+                    {item.description && (
+                      <p className="timeline-description">{item.description}</p>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
-            <button type="button" className="resume-link">
+            <a
+              className="resume-link"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span>View my full resume</span>
               <svg
                 className="resume-link-arrow"
@@ -218,16 +236,16 @@ const App = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </a>
           </article>
 
           <article className="panel">
             <div className="panel-heading">
               <h2>Education</h2>
             </div>
-            <div className="timeline">
+            <div className="timeline timeline-education">
               {education.map((item) => (
-                <div key={item.school} className="timeline-item">
+                <div key={item.school} className="timeline-item timeline-item-compact">
                   <div className="timeline-dot" />
                   <div>
                     <div className="timeline-heading">
