@@ -3,6 +3,8 @@ import anime from "animejs/lib/anime.es.js";
 import ShootingStars from "./ShootingStars"
 
 class StarrySky extends Component {
+  animations = [];
+
   state = {
     num: 120,
     vw: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
@@ -16,6 +18,7 @@ class StarrySky extends Component {
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleResize);
+    this.animations.forEach((animation) => animation.pause());
   }
 
   handleResize = () => {
@@ -55,39 +58,27 @@ class StarrySky extends Component {
   };
 
   starryNight = () => {
-    anime({
+    const primaryTwinkle = anime({
       targets: [".sky .star-0"],
-      opacity: [
-        {
-          duration: 1200,
-          value: 0.22
-        },
-        {
-          duration: 1600,
-          value: 0.78
-        }
-      ],
+      opacity: [0.22, 0.78],
+      duration: (el, i) => 1500 + ((i % 7) * 120),
       easing: "easeInOutSine",
+      direction: "alternate",
       loop: true,
-      delay: (el, i) => 110 * i
+      delay: (el, i) => 95 * i
     });
 
-    anime({
+    const secondaryTwinkle = anime({
       targets: [".sky .star-1"],
-      opacity: [
-        {
-          duration: 1900,
-          value: 0.14
-        },
-        {
-          duration: 2100,
-          value: 0.58
-        }
-      ],
+      opacity: [0.16, 0.56],
+      duration: (el, i) => 2100 + ((i % 9) * 110),
       easing: "easeInOutSine",
+      direction: "alternate",
       loop: true,
-      delay: (el, i) => 85 * i
+      delay: (el, i) => 80 * i
     });
+
+    this.animations = [primaryTwinkle, secondaryTwinkle];
   };
 
   render() {

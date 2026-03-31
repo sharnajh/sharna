@@ -74,14 +74,15 @@ textarea {
 .star {
   fill: white;
   transform-origin: center;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.42));
 }
 
 .star-0 {
-  filter: none;
+  filter: drop-shadow(0 0 4px rgba(190, 235, 255, 0.55));
 }
 
 .star-1 {
-  filter: none;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.38));
 }
 
 .sky-glow {
