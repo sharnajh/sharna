@@ -44,6 +44,20 @@ const experience = [
     end: null,
     description:
       "Focused on system design, modernization, and end-to-end delivery of distributed systems. Involved in planning architecture, defining service boundaries, and driving systems from design through production, with an emphasis on scalability, reliability, and real-world impact.",
+    skills: [
+      "Java",
+      "Spring Boot",
+      "Angular",
+      "Linux",
+      "Python",
+      "SQL",
+      "Docker",
+      "Jenkins",
+      "IBM MQ",
+      "Apache Kafka",
+      "Snowflake",
+      "DB2"
+    ],
     featured: true,
     current: true
   },
@@ -54,6 +68,7 @@ const experience = [
     end: null,
     description:
       "Contributing to the expansion and improvement of global poverty datasets, supporting more equitable and representative research. Part of my role at Morgan Stanley via the Firm's Tech Change Makers program.",
+    skills: ["R", "Python", "SQL", "Google Cloud Platform", "Quarto", "Shiny"],
     current: true
   },
   {
@@ -62,7 +77,18 @@ const experience = [
     start: { month: 1, year: 2024 },
     end: { month: 8, year: 2024 },
     description:
-      "Built a microservice to replace a Mainframe-dependent settlements flow, enabling real-time processing and modernizing a critical system. Contributed to architecture through ADRs and C4 diagrams and improved data reliability across systems."
+      "Built a microservice to replace a Mainframe-dependent settlements flow, enabling real-time processing and modernizing a critical system. Contributed to architecture through ADRs and C4 diagrams and improved data reliability across systems.",
+    skills: [
+      "Java",
+      "Spring Boot",
+      "Linux",
+      "SQL",
+      "Docker",
+      "Jenkins",
+      "IBM MQ",
+      "Apache Kafka",
+      "DB2"
+    ]
   }
 ];
 
@@ -221,6 +247,21 @@ const App = () => {
                     {item.description && (
                       <p className="timeline-description">{item.description}</p>
                     )}
+                    {item.skills?.length ? (
+                      <div
+                        className="experience-skill-list"
+                        aria-label={`${item.title} skills and tools`}
+                      >
+                        {item.skills.map((skill) => (
+                          <span
+                            key={`${item.title}-${skill}`}
+                            className="experience-skill-badge"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               ))}
