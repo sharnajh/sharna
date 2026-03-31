@@ -67,7 +67,7 @@ const experience = [
     start: { month: 3, year: 2026 },
     end: null,
     description:
-      "Contributing to the expansion and improvement of global poverty datasets, supporting more equitable and representative research. Part of my role at Morgan Stanley via the Firm's Tech Change Makers program.",
+      "enhancing an open‑source, Quarto‑based data platform by supporting implementation of authentication, role‑based access controls, and early interactive analytics within an R/Python stack, improving secure and scalable data access for research and policy users. Part of my role at Morgan Stanley via the Firm's Tech Change Makers program.",
     skills: ["R", "Python", "SQL", "Google Cloud Platform", "Quarto", "Shiny"],
     current: true
   },
