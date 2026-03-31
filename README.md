@@ -1,19 +1,27 @@
-# Sharna's Portfolio Website
+# Sharna Portfolio
 
-## Technologies
-* JavaScript (ES6+)
-* React.js
-* Redux.js
-* Anime.js
-* Three.js
-* Netlify
+Personal portfolio site built with React.
 
-## Assets
-* GoogleFonts
-* Free3D.com
-* Loading.io
+## Preview
 
-## Software
-* Adobe Illustrator
-* Visual Studio Code
-* React Dev Tools
+![Portfolio preview](src/assets/screenshots/Screenshot%202026-03-31%20175506.png)
+
+## Stack
+
+- React
+- Anime.js
+- CSS
+- Netlify
+
+## Local Development
+
+```bash
+npm install
+npm start
+```
+
+## Build
+
+```bash
+npm run build
+```
