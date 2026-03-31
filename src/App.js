@@ -69,7 +69,7 @@ const experience = [
 const education = [
   {
     school: "Columbia University",
-    degree: "Bachelor of Arts in Computer Science"
+    degree: "Coursework in Computer Science"
   },
   {
     school: "BMCC",
