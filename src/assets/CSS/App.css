@@ -296,6 +296,23 @@ textarea {
   font-size: 1.08rem;
 }
 
+.location-pin {
+  width: 0.96rem;
+  height: 0.96rem;
+  display: inline-block;
+  vertical-align: -0.08em;
+  margin-right: 0.16rem;
+  overflow: visible;
+}
+
+.location-pin path {
+  fill: var(--blue);
+}
+
+.location-pin circle {
+  fill: rgba(10, 18, 40, 0.92);
+}
+
 .hero-copy-block {
   max-width: 48rem;
   margin: 1rem 0 0;

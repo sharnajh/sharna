@@ -56,7 +56,8 @@ const experience = [
       "IBM MQ",
       "Apache Kafka",
       "Snowflake",
-      "DB2"
+      "DB2",
+      "FIX"
     ],
     featured: true,
     current: true
@@ -157,6 +158,18 @@ const SparkleBullet = () => (
   </svg>
 );
 
+const LocationPin = () => (
+  <svg
+    className="location-pin"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M12 23C12 23 4 14.909 4 9.5C4 5.358 7.582 2 12 2C16.418 2 20 5.358 20 9.5C20 14.909 12 23 12 23Z" />
+    <circle cx="12" cy="9.5" r="3.25" />
+  </svg>
+);
+
 const App = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -176,9 +189,7 @@ const App = () => {
                 <h1>Sharna H.</h1>
                 <p className="hero-line">Software Engineer</p>
                 <p className="hero-line">
-                  <span role="img" aria-label="Location pin">
-                    📍
-                  </span>{" "}
+                  <LocationPin />{" "}
                   Brooklyn, New York
                 </p>
               </div>
