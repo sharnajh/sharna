@@ -43,7 +43,7 @@ const experience = [
     start: { month: 8, year: 2024 },
     end: null,
     description:
-      "Focused on system design, modernization, and end-to-end delivery of distributed systems. Involved in planning architecture, defining service boundaries, and driving systems from design through production, with an emphasis on scalability, reliability, and real-world impact.",
+      "Focused on system design, modernization, and end-to-end delivery of distributed systems. Involved in planning architecture, defining service boundaries, and driving systems from design through production.",
     skills: [
       "Java",
       "Spring Boot",
