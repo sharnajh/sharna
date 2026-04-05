@@ -634,6 +634,190 @@ textarea {
   transform: translateX(4px);
 }
 
+.project-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: 1.1rem;
+  padding: 1rem 1rem 0.95rem;
+  border-radius: 20px;
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.project-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 20px 32px rgba(4, 7, 25, 0.2);
+}
+
+.project-body {
+  min-width: 0;
+}
+
+.project-media {
+  display: flex;
+  align-items: stretch;
+}
+
+.project-media-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  min-height: 174px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.project-media-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(145deg, rgba(255, 98, 183, 0.34), transparent 40%),
+    linear-gradient(325deg, rgba(185, 168, 255, 0.28), transparent 58%),
+    rgba(12, 15, 42, 0.28);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.project-media-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 17, 38, 0.18);
+  color: #f9e3ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 220ms ease, background 220ms ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-media-overlay span {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(9, 16, 38, 0.42);
+  backdrop-filter: blur(8px);
+}
+
+.project-item:hover .project-media-overlay {
+  opacity: 1;
+  background: rgba(7, 17, 38, 0.28);
+}
+
+.project-media-image {
+  width: 100%;
+  height: 100%;
+  min-height: 174px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.72) contrast(1.02) brightness(0.82) hue-rotate(18deg);
+}
+
+.project-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.project-heading h3 {
+  margin: 0;
+  font-family: "Futura", "Manrope", sans-serif;
+  font-size: 1.12rem;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.project-label {
+  display: inline-flex;
+  align-items: center;
+  color: var(--blue);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-summary {
+  margin: 0;
+  max-width: 56rem;
+  color: var(--muted);
+}
+
+.project-summary {
+  margin-top: 0.55rem;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.project-tech-list::-webkit-scrollbar {
+  display: none;
+}
+
+.project-link {
+  margin-top: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f9e3ff;
+  font-weight: 700;
+  transition: color 220ms ease;
+}
+
+.project-link-arrow {
+  transition: transform 220ms ease;
+}
+
+.project-link:hover {
+  color: var(--blue);
+}
+
+.project-link:hover .project-link-arrow {
+  transform: translateX(4px);
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.project-links .project-link {
+  margin-top: 0;
+}
+
+.project-link-secondary {
+  color: rgba(196, 197, 234, 0.88);
+}
+
+.project-link-secondary:hover {
+  color: var(--blue);
+}
+
 @media only screen and (max-width: 980px) {
   .hero-card {
     padding: 2rem;
@@ -740,6 +924,33 @@ textarea {
     min-height: 1.56rem;
     padding: 0.22rem 0.56rem;
     font-size: 0.72rem;
+  }
+
+  .project-heading h3 {
+    font-size: 1rem;
+  }
+
+  .project-item {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media-frame,
+  .project-media-image {
+    min-height: 150px;
+  }
+
+  .project-summary {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .project-tech-list {
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .project-links {
+    gap: 0.8rem;
   }
 
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { FaCodepen, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import "./assets/CSS/App.css";
 import StarrySky from "./assets/SVGs/StarrySky";
+import digigramPreview from "./assets/digigram-preview.gif";
 
 const MONTH_LABELS = [
   "Jan",
@@ -105,6 +106,28 @@ const education = [
   {
     school: "New York Code + Design Academy",
     degree: "Coding Bootcamp"
+  }
+];
+
+const projects = [
+  {
+    title: "Digigram",
+    label: "Personal Project",
+    href: "https://digigram.sharna.dev/",
+    repoHref: "https://github.com/sharnajh/capstone_backend",
+    description:
+      "Full-stack social media web application built with React, Redux, and a Java Spring Boot backend, featuring user authentication, password encryption, profile management, image-based post creation, comments, likes, and follow functionality backed by a PostgreSQL database, hosted on Netlify.",
+    previewSrc: digigramPreview,
+    previewAlt: "Digigram application preview",
+    technologies: [
+      "React",
+      "Redux",
+      "Spring Boot",
+      "PostgreSQL",
+      "Neon",
+      "Netlify",
+      "Reactstrap"
+    ]
   }
 ];
 
@@ -324,6 +347,86 @@ const App = () => {
                     </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="panel">
+            <div className="panel-heading">
+              <h2>Projects</h2>
+            </div>
+            <div className="project-list">
+              {projects.map((project) => (
+                <a
+                  key={project.title}
+                  className="project-item"
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="project-media" aria-hidden="true">
+                    <div className="project-media-frame">
+                      <img
+                        className="project-media-image"
+                        src={project.previewSrc}
+                        alt={project.previewAlt}
+                      />
+                      <div className="project-media-overlay">
+                        <span>View live demo</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="project-body">
+                  <div className="project-heading">
+                    <h3>{project.title}</h3>
+                    <span className="project-label">{project.label}</span>
+                  </div>
+                  <p className="project-summary">{project.description}</p>
+                  {project.technologies?.length ? (
+                    <div className="project-tech-list" aria-label={`${project.title} technologies`}>
+                      {project.technologies.map((technology) => (
+                        <span
+                          key={`${project.title}-${technology}`}
+                          className="experience-skill-badge"
+                        >
+                          {technology}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                  <div className="project-links">
+                    <span className="project-link">
+                      <span>Visit live demo</span>
+                      <svg
+                        className="project-link-arrow"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 9H14M14 9L9.75 4.75M14 9L9.75 13.25"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <a
+                      className="project-link project-link-secondary"
+                      href={project.repoHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(event) => event.stopPropagation()}
+                    >
+                      <span>GitHub repo</span>
+                    </a>
+                  </div>
+                  </div>
+                </a>
               ))}
             </div>
           </article>
