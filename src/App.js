@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCodepen, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import "./assets/CSS/App.css";
 import StarrySky from "./assets/SVGs/StarrySky";
@@ -193,7 +193,21 @@ const LocationPin = () => (
   </svg>
 );
 
+const EyeIcon = () => (
+  <svg
+    className="project-overlay-icon"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M2 12C3.9 8.3 7.5 6 12 6C16.5 6 20.1 8.3 22 12C20.1 15.7 16.5 18 12 18C7.5 18 3.9 15.7 2 12Z" />
+    <circle cx="12" cy="12" r="3.2" />
+  </svg>
+);
+
 const App = () => {
+  const [loadedPreviews, setLoadedPreviews] = useState({});
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -365,14 +379,33 @@ const App = () => {
                   rel="noopener noreferrer"
                 >
                   <div className="project-media" aria-hidden="true">
-                    <div className="project-media-frame">
+                    <div
+                      className={`project-media-frame${
+                        loadedPreviews[project.title] ? " project-media-frame-loaded" : ""
+                      }`}
+                    >
+                      {!loadedPreviews[project.title] && (
+                        <div className="project-media-loading">
+                          <span className="project-media-loading-dot" />
+                          <span>Loading preview</span>
+                        </div>
+                      )}
                       <img
                         className="project-media-image"
                         src={project.previewSrc}
                         alt={project.previewAlt}
+                        onLoad={() =>
+                          setLoadedPreviews((current) => ({
+                            ...current,
+                            [project.title]: true
+                          }))
+                        }
                       />
                       <div className="project-media-overlay">
-                        <span>View live demo</span>
+                        <span>
+                          <EyeIcon />
+                          View live demo
+                        </span>
                       </div>
                     </div>
                   </div>

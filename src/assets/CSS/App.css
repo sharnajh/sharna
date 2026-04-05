@@ -674,6 +674,33 @@ textarea {
   background: rgba(255, 255, 255, 0.03);
 }
 
+.project-media-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  color: rgba(196, 197, 234, 0.76);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background:
+    linear-gradient(180deg, rgba(115, 217, 255, 0.06), rgba(115, 217, 255, 0.02)),
+    rgba(255, 255, 255, 0.03);
+}
+
+.project-media-loading-dot {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--blue);
+  box-shadow: 0 0 10px rgba(115, 217, 255, 0.45);
+  animation: previewPulse 1.1s ease-in-out infinite alternate;
+}
+
 .project-media-frame::after {
   content: "";
   position: absolute;
@@ -683,6 +710,11 @@ textarea {
     linear-gradient(325deg, rgba(185, 168, 255, 0.28), transparent 58%),
     rgba(12, 15, 42, 0.28);
   mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.project-media-frame-loaded .project-media-loading {
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -710,11 +742,31 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(9, 16, 38, 0.42);
   backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
 .project-item:hover .project-media-overlay {
   opacity: 1;
   background: rgba(7, 17, 38, 0.28);
+}
+
+.project-overlay-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.project-overlay-icon path {
+  fill: none;
+  stroke: currentColor;
+  strokeWidth: 1.7;
+  strokeLinecap: round;
+  strokeLinejoin: round;
+}
+
+.project-overlay-icon circle {
+  fill: currentColor;
 }
 
 .project-media-image {
@@ -724,6 +776,17 @@ textarea {
   object-fit: cover;
   display: block;
   filter: saturate(0.72) contrast(1.02) brightness(0.82) hue-rotate(18deg);
+}
+
+@keyframes previewPulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
 
 .project-heading {
